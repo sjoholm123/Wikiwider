@@ -21,7 +21,7 @@
         'username' => ''.$username
     );
 
-    $payload = json_decode($data);
+    $payload = json_encode($data);
     $ch = curl_init("https://wider.ntigskovde.se/api/pages/create_post.php?API=$API");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
