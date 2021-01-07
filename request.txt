@@ -1,0 +1,362 @@
+
+
+1. ändra 'serviceID' i tabellen 'service' till autoincremented
+
+2. Lägg till 'pageTitle' i tabellen 'spage' med typen 'VARCHAR' och värdet '255' 
+
+3. skapa en ny php-fil 'delete_service.php' i filen wider/api/pages/
+
+   I filen 'delete_service.php' klistra in följande
+
+	<?php
+	//Headers
+	header('Access-Control-Allow-Origin: *');
+	header('Content-Type: application/json');
+	header('Access-Control-Allow-Methods: DELETE');
+	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
+
+	include_once '../../config/Database.php';
+	include_once '../../models/Service.php';
+
+	//Instantiate DB & connect
+	$database = new Database();
+	$db = $database->connect();
+
+	//Instantiate post object
+	$service = new Service($db);
+
+	//Get raw posted data
+	$data = json_decode(file_get_contents("php://input"));
+
+	//Set pageID to DELETE
+	$service->serviceID = $data->serviceID;
+
+	//Delete post
+	if($service->delete_service()){
+    	echo json_encode(
+        array('message' => 'Service Deleted')
+    	);
+	}else{
+    	echo json_encode(
+        array('message' => 'Service Not Deleted')
+    	);
+	}
+	?>
+
+4.  skapa en ny php-fil 'update_service.php' i filen wider/api/pages/
+
+	I filen 'update_service.php' klistra in följande
+
+	<?php
+	//Headers
+	header('Access-Control-Allow-Origin: *');
+	header('Content-Type: application/json');
+	header('Access-Control-Allow-Methods: PUT');
+	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
+
+	include_once '../../config/Database.php';
+	include_once '../../models/Service.php';
+
+	//Instantiate DB & connect
+	$database = new Database();
+	$db = $database->connect();
+
+	//Instantiate service object
+	$service = new Service($db);
+
+	//Get raw posted data
+	$data = json_decode(file_get_contents("php://input"));
+
+	//Set serviceID to UPDATE
+	$service->serviceID = $data->serviceID;
+
+	$service->serviceTitle = $data->serviceTitle;
+	$service->publish = $data->publish;
+	//$service->userID = $data->userID;
+
+	//Update service
+	if($service->update_service()){
+   	 echo json_encode(
+        array('message' => 'Service Updated')
+  	);
+	}else{
+    	echo json_encode(
+        array('message' => 'Service Not Updated')
+    	);
+	}
+	?>
+
+5.  skapa en ny php-fil 'delete_page.php' i filen wider/api/pages/
+
+	I filen 'delete_page.php' klistra in följande
+
+	<?php
+	//Headers
+	header('Access-Control-Allow-Origin: *');
+	header('Content-Type: application/json');
+	header('Access-Control-Allow-Methods: DELETE');
+	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
+
+	include_once '../../config/Database.php';
+	include_once '../../models/page.php';
+
+	//Instantiate DB & connect
+	$database = new Database();
+	$db = $database->connect();
+
+	//Instantiate post object
+	$page = new page($db);
+
+	//Get raw posted data
+	$data = json_decode(file_get_contents("php://input"));
+
+	//Set pageID to DELETE
+	$page->pageID = $data->pageID;
+
+	//Delete post
+	if($page->delete_page()){
+   	echo json_encode(
+        array('message' => 'Page Deleted')
+    	);
+	}else{
+    	echo json_encode(
+        array('message' => 'Page Not Deleted')
+    	);
+	}
+	?>
+
+6. skapa en ny php-fil 'update_page.php' i filen wider/api/pages/
+
+	I filen 'update_page.php' klistra in följande
+
+	<?php
+	//Headers
+	header('Access-Control-Allow-Origin: *');
+	header('Content-Type: application/json');
+	header('Access-Control-Allow-Methods: PUT');
+	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
+
+	include_once '../../config/Database.php';
+	include_once '../../models/page.php';
+
+	//Instantiate DB & connect
+	$database = new Database();
+	$db = $database->connect();
+
+	//Instantiate page object
+	$page = new page($db);
+
+	//Get raw posted data
+	$data = json_decode(file_get_contents("php://input"));
+
+	//Set pageID to UPDATE
+	$page->pageID = $data->pageID;
+	$page->serviceID = $data->serviceID;
+	$page->metaTag = $data->metaTag;
+
+	//Update page
+	if($page->update_page()){
+    	echo json_encode(
+        array('message' => 'page Updated')
+    	);
+	}else{
+    	echo json_encode(
+        array('message' => 'page Not Updated')
+    	);
+	}
+	?>
+
+7. skapa en ny php-fil 'search_page.php' i filen wider/api/pages/
+	
+	I filen 'search_page.php' klistra in följande
+	
+	<?php
+
+	header('Access-Control-Allow-Origin: *');
+	header('Content-Type: application/json');
+
+	include_once '../../config/Database.php';
+	include_once '../../models/search.php';
+
+	$database = new Database();
+	$db = $database->connect();
+
+	$page = new Search($db);
+	$page->search = isset($_GET['search']) ? $_GET['search'] : die();
+
+	$result = $page->read_Title();
+	$rowCount = $result->rowCount();
+
+	if($rowCount > 0){
+   	$page_arr = array();
+   	$page_arr['data'] = array();
+
+    	while($row = $result->fetch(PDO::FETCH_ASSOC)){
+        extract($row);
+
+        $page_item = array(
+            'postTitle' => $postTitle
+        );
+
+        array_push($page_arr['data'], $page_item);
+    	}
+
+    	$page_arr['data']=array_map("unserialize", array_unique(array_map("serialize", $page_arr['data'])));
+    	echo json_encode($page_arr);
+
+	} else {
+    	echo json_encode(
+        array('message' => 'No Pages Found')
+    	);
+	}
+
+	?>
+
+8. gå in i filen 'service.php' som finns i filen wider/models/
+
+	i filen 'service.php' klistra in följande på rad 63
+
+ 	//Delete service
+    	public function delete_service(){
+        //Creating query
+        $query = 'DELETE FROM '. $this->table .'
+        WHERE serviceID = :serviceID';
+
+        //Preparing statement
+        $stmt = $this->conn->prepare($query);
+
+        //Clean data
+        $this->serviceID =htmlspecialchars(strip_tags($this->serviceID));
+
+        //Bind data
+        $stmt->bindParam(':serviceID', $this->serviceID);
+
+        //Executing query
+        if($stmt->execute()){
+            return true;
+        }
+        
+        //Print error
+        printf("Error: %s.\n", $stmt->error);
+        return false;
+    	}
+
+9. gå in i filen 'service.php' som finns i filen wider/models/
+
+	i filen 'service.php' klistra in följande på rad 124
+
+	    public function update_service(){
+            //Update query
+            $query = 'UPDATE ' . $this->table . '
+       	    SET
+            serviceTitle = :serviceTitle,
+            serviceDate = CURDATE(),
+            publish = :publish
+            WHERE
+            serviceID = :serviceID';
+
+            //Preparing statement
+            $stmt = $this->conn->prepare($query);
+
+            //Clean data
+            $this->serviceTitle =htmlspecialchars(strip_tags($this->serviceTitle));
+            $this->publish =htmlspecialchars(strip_tags($this->publish));
+            $this->serviceID =htmlspecialchars(strip_tags($this->serviceID));
+            //$this->userID =htmlspecialchars(strip_tags($this->userID));
+
+            //Bind data
+            $stmt->bindParam(':serviceTitle', $this->serviceTitle);
+            $stmt->bindParam(':publish', $this->publish);
+            $stmt->bindParam(':serviceID', $this->serviceID);
+            //$stmt->bindParam(':userID', $this->userID);
+
+            //Executing query
+            if($stmt->execute()){
+                return true;
+            }
+
+            //Print error
+            printf("Error: %s.\n", $stmt->error);
+            return false;
+    	    }
+
+10. gå in i filen 'page.php' som finns i filen wider/models/
+
+	i filen 'page.php' klistra in följande på rad 43
+
+                //Delete page
+                public function delete_page(){
+                //Creating query
+                $query = 'DELETE FROM '. $this->table .'
+                WHERE pageID = :pageID';
+    
+                //Preparing statement
+                $stmt = $this->conn->prepare($query);
+    
+                //Clean data
+                $this->pageID =htmlspecialchars(strip_tags($this->pageID));
+    
+                //Bind data
+                $stmt->bindParam(':pageID', $this->pageID);
+    
+                //Executing query
+                if($stmt->execute()){
+                    return true;
+                }
+                
+                //Print error
+                printf("Error: %s.\n", $stmt->error);
+                return false;
+            }
+
+11. gå in i filen 'page.php' som finns i filen wider/models/
+
+	i filen 'page.php' klistra in följande på rad 85
+
+	        //Update Page
+                public function update_page(){
+                //Update query
+                $query = 'UPDATE ' . $this->table . '
+                SET
+                serviceID = :serviceID,
+                metaTag = :metaTag
+                WHERE
+                pageID = :pageID';
+    
+                //Preparing statement
+                $stmt = $this->conn->prepare($query);
+    
+                //Clean data
+                $this->serviceID =htmlspecialchars(strip_tags($this->serviceID));
+                $this->metaTag =htmlspecialchars(strip_tags($this->metaTag));
+                $this->pageID =htmlspecialchars(strip_tags($this->pageID));
+                //Bind data
+                $stmt->bindParam(':metaTag', $this->metaTag);
+                $stmt->bindParam(':serviceID', $this->serviceID);
+                $stmt->bindParam(':pageID', $this->pageID);
+
+                //Executing query
+                if($stmt->execute()){
+                    return true;
+                }
+    
+                //Print error
+                printf("Error: %s.\n", $stmt->error);
+                return false;
+        }
+
+12. gå in i filen 'search.php' som finns i filen wider/models/
+	
+	i filen 'search.php' klistra in följande på rad 13
+
+		public function read_Title(){
+            	$sql = 'SELECT postTitle
+            	FROM '.$this->table. '
+            	WHERE postTitle LIKE "%"?"%"';
+        
+        	$stmt = $this->conn->prepare($sql);
+        	$stmt->bindParam(1, $this->search);
+        	$stmt->execute();
+        
+        	return $stmt;
+        	}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Marvel&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+        <img class="marvel" src="bilder/marvelwiki.png">
+        <div class="search"><input type="text" placeholder="Search for.."></div>
+        <i class="far fa-search blackhover"></i>
+        <div class="backgroundicon">
+        <i class="far fa-sign-in blackhover" id="sign-in"></i>
+        <i class="fas fa-user blackhover" id="register"></i>
+        </div>  
+       
+        <div class="login-form">
+            <div class="banner"></div>
+            <div class="logo">
+                <img class="marvel-logo" src="bilder/marvel-logo.png">
+            </div>
+            <i class="fas fa-times" style="position: absolute; font-size: 1.25vw; top: 0; right: 0; margin: 2%; filter: invert(1);" id="cancel"></i>
+            <form class="login" action="loginLocal.php" method="post">
+                <input class="username" type="text" name="username"
+                    onfocus="ifocus(this)"
+                    onblur="iblur(this)"
+                >
+                <label for="username" class="username-label">Username</label>
+                <br>
+                <input class="password" type="password" name="password"
+                    onfocus="ifocus2(this)"
+                    onblur="iblur2(this)"
+                >
+                <label for="password" class="password-label">Password</label>
+                <input type="submit" class="login-btn" value="Login">
+            </form>
+            <div class="pos">
+                <span class="register-link">Dont have an account? <a href="" class="link">Sign up</a></span>
+            </div>
+        </div>
+
+        <div class="register-form">
+            <div class="regi-banner">
+            </div>
+            <div class="logo">
+                <img class="marvel-logo" src="bilder/marvel-logo.png">
+            </div>
+            <i class="fas fa-times" style="position: absolute; font-size: 1.25vw; top: 0; right: 0; margin: 2%; filter: invert(1);" id="cross"></i>
+            <form class="register">
+                <input class="username" type="text" name="username"
+                    onfocus="ifocus(this)"
+                    onblur="iblur(this)"
+                >
+                <label for="username" class="username-label">Register Username</label>
+                <br>
+                <input class="password" type="password" name="password"
+                    onfocus="ifocus2(this)"
+                    onblur="iblur2(this)"
+                >
+                <label for="password" class="password-label">Register Password</label>
+                <input type="submit" class="login-btn" value="Sign up">
+            </form>
+            <div class="pos">
+                <span class="register-link">Already have an account? <a href="" class="link">Login</a></span>
+            </div>
+        </div>
+</body>
+<script src="js/popUpLocal.js"></script>
+<script type="text/javascript" src="js/marvel.js"></script>
+</html>

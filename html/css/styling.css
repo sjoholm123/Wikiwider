@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-y: hidden;
+}
+.header{
+    position: absolute;
+    width: 100vw;
+    height: 10vh;
+    z-index: 1;
+    background-color: #e94b3c00;
+
+}
+.menu-btn {
+    position:absolute;
+    left:96vw;
+    top:2.5vh;
+    width:  2.34vw;
+    height:  5.19vh;
+    background-color:#ff1f0bad;
+    border-radius:50%;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+    color: rgb(223, 223, 223);
+    transition: transform 0.3s;
+}
+#one{
+    z-index: 3;
+}
+#two{
+    font-size: 1.1vw;
+    z-index: 2;
+}
+#three{
+    font-size: 1.1vw;
+    z-index: 1;
+}
+.menu-btn:hover{
+    box-shadow: 0vw 0vh 1.5vw red;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.marvel{
+    position: absolute;
+    width: 10%;
+    top: 2.5vh;
+    left: 1.5vw;
+    -webkit-user-drag: none;
+    filter: invert(1);
+    -webkit-user-drag: none;
+}
+.search input[type=text]{
+    position: absolute;
+    left: 12.5vw;
+    top: 2.125vh;
+    width: 49vw;
+    height: 6vh;
+    background-color: #b43327c4;
+    font-size: 1.5vw;
+    font-family: 'Marvel';
+    padding-left: 1vw;
+    border: none;
+    outline: none;
+    border-radius: 0.375vw;
+    z-index: 10;
+}
+input{
+    color: white;
+}
+::placeholder{
+    color: darkgray;
+}
+.fa-search{
+    position: absolute;
+    left: 60vw;
+    top: 3.7vh;
+    font-size: 1.5vw;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    outline: none;
+    color:  darkgray;
+    transition: color 0.4s;
+    z-index: 10;
+}
+.user{
+    position: absolute;
+    top: 2.5vh;
+    left: 90vw;
+    font-family: 'Marvel';
+    font-weight: 900;
+    font-size: 2vw;
+    color: white;
+    z-index: 20;
+    letter-spacing: 0.2vh;
+    visibility: hidden;
+}
+.containS{
+    position: absolute;
+    width: 25vw;
+    display: inline-block; /* change the default display type to inline-block */
+    overflow: hidden; 
+}
+.containC{
+    position: absolute;
+    width: 25vw;
+    display: inline-block; /* change the default display type to inline-block */
+    overflow: hidden; 
+    left: 25vw;
+}
+.containH{
+    position: absolute;
+    width: 25vw;
+    display: inline-block; /* change the default display type to inline-block */
+    overflow: hidden; 
+    left: 50vw;
+}
+.containT{
+    position: absolute;
+    width: 25vw;
+    display: inline-block; /* change the default display type to inline-block */
+    overflow: hidden; 
+    left: 75vw;
+}
+.image{
+    width: 25vw;
+    transition: 0.5s;
+    filter: brightness(40%);
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+.image:hover{
+    transform: scale(1.1);
+    filter: brightness(120%);
+}
+.redBG{
+    position: absolute;
+    background-color: #e94b3c;
+    z-index: 10;
+    top: 99vh;
+    height: 10vh;
+    width: 25vw;
+    transition: 0.4s;
+    font-family: 'Marvel';
+    font-weight: 900;
+    font-size: 3vw;
+    text-align: center;
+    line-height: 10vh;
+    color: white;
+    cursor: pointer;
+}
+.redBG:hover{
+    transform: translateY(-9vh);
+}
+.image:hover ~ .redBG{
+    transform: translateY(-9vh);
+}
+
+

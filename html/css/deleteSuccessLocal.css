@@ -1,0 +1,364 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(233,75,60);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.user{
+    position: absolute;
+    left: 93.75vw;
+    top: 8.5vh;
+    font-family: 'Marvel';
+    font-weight: 900;
+    font-size: 1.5vw;
+    color: white;
+    letter-spacing: 0.25vw;
+}
+.marvel{
+    position: absolute;
+    width: 10%;
+    top: 3.5vh;
+    left: 2.25vw;
+    filter: invert(1);
+    -webkit-user-drag: none;
+}
+.search input[type=text]{
+    position: absolute;
+    left: 12.5vw;
+    top: 3.35vh;
+    width: 45vw;
+    height: 5.25vh;
+    background-color: rgb(180, 51, 39);
+    font-size: 1.5vw;
+    padding-left: 1vw;
+    border: none;
+    outline: none;
+    border-radius: 0.375vw;
+}
+input{
+    color: white;
+}
+::placeholder{
+    color: darkgray;
+}
+.fa-search{
+    position: absolute;
+    left: 56vw;
+    top: 4.5vh;
+    font-size: 1.4vw;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    outline: none;
+    color:  darkgray;
+    transition: color 0.4s;
+}
+.backgroundicon{
+    position: absolute;
+    width: 12.5vw;
+    height: 5vh;
+    top: 3vh;
+    left: 85vw;
+    background-color: rgb(255, 87, 72);
+    border-radius: 3vw;
+}
+.fa-sign-out{
+    position: absolute;
+    left: 10vw;
+    top: 0.75vh;
+    font-size: 1.75vw;
+    color: white;
+    transition: color 0.4s;
+}
+.fa-user{
+    position: absolute;
+    left: 7.25vw;
+    top: 1.1vh;
+    font-size: 1.4vw;
+    color: white;
+    transition: color 0.4s;
+}
+.fa-file-plus{
+    position: absolute;
+    left: 4.5vw;
+    top: 1.1vh;
+    font-size: 1.4vw;
+    color: white;
+    transition: color 0.4s;
+}
+.fa-times{
+    color: rgb(255, 255, 255);
+    border:none;
+    background-color: rgba(0,0,0,0);
+    font-size:1.5vw;
+    position: relative;
+    left: 0vw;
+    top: 0.05vh;
+    outline: none;
+    text-decoration: none;
+}
+.fa-times:hover{
+    color: darkred;
+}
+.blackhover:hover{
+    color: rgb(230, 230, 230);
+}
+
+.login-form {
+    position: absolute;
+    width: 55vw;
+    height: 75vh;
+    top: 15vh;
+    background-color: #DC332E;
+    display: flex;
+    align-items: center;
+    box-shadow: -1vw 4vh 8vw rgb(102, 3, 3);
+    visibility: show;
+}
+
+.register-form{
+    position: absolute;
+    width: 55vw;
+    height: 75vh;
+    top: 15vh;
+    background-color: #DC332E;
+    display: flex;
+    align-items: center;
+    visibility: show;
+    box-shadow: -1vw 4vh 8vw rgb(102, 3, 3);
+
+    visibility: hidden;
+}
+
+.username {
+    width: 20vw;
+    height: 6vh;
+    outline: none;
+    margin-bottom: 2vh;
+    color: white;
+    border-bottom: 0.35vh solid darkgray;
+    background: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    transition: border-color 0.2s;
+}
+
+.username:focus ~ .username-label,
+username:not(:focus):valid ~ .username-label {
+    font-size: 1.05vw;
+    color: white;
+}
+
+.username-label {
+    position: absolute;
+    left: 27.25vw;
+    font-family: sans-serif;
+    font-size: 1.15vw;
+    top: 32.25vh;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    color: darkgray;
+}
+
+.username-label-after {
+    font-size: 1.05vw;
+    color: white;
+    top: 28.3vh;
+    position: absolute;
+    left: 27.25vw;
+    font-family: sans-serif;
+    transition: 0.2s ease all;
+}
+
+.username:focus {
+    border-color: white;
+}
+
+.password:focus ~ .password-label,
+password:not(:focus):valid ~ .password-label {
+    font-size: 1.05vw;
+    color: white;
+}
+
+.password:focus {
+    border-color: white;
+}
+
+.password{
+    width: 20vw;
+    height: 6vh;
+    margin-left: 0vw;
+    outline: none;
+    color: white;
+    border-bottom: 0.35vh solid darkgray;
+    background: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    transition: border-color 0.2s;
+    
+}
+
+.password-label {
+    position: absolute;
+    left: 27.25vw;
+    font-family: sans-serif;
+    font-size: 1.15vw;
+    top: 40.2vh;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    color: darkgray;
+}
+
+.password-label-after {
+    position: absolute;
+    left: 27.25vw;
+    font-family: sans-serif;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    font-size: 1.05vw;
+    color: white;
+    top: 37.25vh;
+
+}
+
+.login-btn {
+    position: absolute;
+    margin-top: 5vh;
+    margin-left: 5vw;
+    display: block;
+    width: 10vw;
+    height: 6vh;
+    border-radius: 2vw;
+    color: darkgray;
+    outline: none;
+    border: 0.35vh solid darkgray;
+    background-color: transparent;
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 1.1vw;
+}
+
+.login-btn:hover {
+    background-color: white;
+    color: black;
+    border: 0.35vh solid white;
+}
+
+.register-link {
+    position: relative;
+}
+
+.pos {
+    position: absolute;
+    width: 35.75vw;
+    height: 6vh;
+    bottom: 0;
+    margin-left: 19.25vw;
+    text-align: center;
+    color: white;
+    font-size: 1.05vw;
+}
+
+.link {
+    text-decoration: underline;
+    color: white;
+}
+
+.logo {
+    position: absolute;
+    width: 20vw;
+    height: 15vh;
+    top: 5.75vh;
+    background-color: inherit;
+    left: 32.5vw;
+}
+
+.marvel-logo {
+    width: 10vw;
+    image-rendering: optimizeQuality;
+}
+
+.banner {
+    position: relative;
+    width: 35%;
+    height: 100%;
+    background-color: aliceblue;
+    left: 0;
+    margin-right: 8vw;
+    background: url("login-banner.png");
+    background-size: 100% auto;
+}
+.regi-banner {
+    position: relative;
+    width: 35%;
+    height: 100%;
+    left: 0;
+    margin-right: 8vw;
+    background-image: url("regi-banner.png");
+    background-size: 100%;
+}
+.deleteText{
+    position: absolute;
+    font-size: 2.5vw;
+    font-family: 'Marvel';
+    font-weight: 600;
+    top: 12.5vh;
+    left: 2.5vw;
+    color: rgb(240, 240, 240);
+}
+.table{
+    position: absolute;
+    background-color:rgb(211, 66, 53);
+    font-size: 1.75vw;
+    font-family: 'Marvel';
+    font-weight: 600;
+    color: black;
+    top: 20vh;
+    left: 2.5vw;
+    width: 56vw;
+    border-top-right-radius: 0.375vw;
+    border-bottom-right-radius: 0.375vw;
+    border: 1vw rgb(255, 91, 76);
+    border-left-style: solid;
+    box-shadow: 1vw 2.5vh 1.75vw rgb(143, 40, 30);
+    overflow-y:scroll;
+    max-height:80vh;
+    display:block;
+}
+.aText{
+    text-decoration: none;
+    color: white;
+    font-size: 1.75vw;
+    font-family: 'Marvel';
+    font-weight: 600;
+    margin-left: 0.75vw;
+
+}
+.aText:hover{
+    color: black;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    border-top-right-radius: 0.375vw;
+    border-bottom-right-radius: 0.375vw;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(211, 66, 53);
+    border-top-right-radius: 0.375vw;
+    border-bottom-right-radius: 0.375vw;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(211, 66, 53);
+    border-top-right-radius: 0.375vw;
+    border-bottom-right-radius: 0.375vw;
+  }
+  

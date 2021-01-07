@@ -1,0 +1,24 @@
+Alla PageID ska tillhöra samma serviceID
+
+Man ska kunna göra postID i dem olika PageID
+
+Lägg till pageTitle i tabellen page
+
+Sökfunktion för att söka efter pageTitle
+
+create_service (tvungen att skriva in serviceID, ändra till autoincremented)
+
+delete_service.php (genom serviceTitle)	check
+	
+update_service.php (serviceTitle)	check
+
+delete_page.php (metaTag, serviceID)	check
+
+update_page.php	(metaTag, serviceID)	check
+
+delete & update unika post	
+
+En post i page ska ha postTitle vilket är Huvudtiteln för Sidan,
+eftersom det inte finns en titel kolumn i page tabellen.
+
+create_user.php, ingen apikey

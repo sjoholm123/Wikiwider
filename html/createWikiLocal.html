@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/createWiki.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="tools">
+            <div id="add_subheader" class="section">
+                <img title="Add Subheader" class="add_subheader" src="bilder/add_subheader.svg">
+            </div>
+            <div id="add_paragraph" class="section">
+                <img title="Add Paragraph" class="add_field" src="bilder/add_field_icon.svg">
+            </div>
+            <div class="section">
+                
+            </div>
+        </div>
+        <button class="cancel">Cancel</button>
+    </nav>
+
+    <div class="container">
+        <form class="form" action="createWiki.php" method="post">
+            <input class="heading" type="text" name="pageTitle" placeholder="Heading">
+            <input class="subheading" type="text" name="postTitle" placeholder="Subheading 1">
+            <textarea class="paragraph" cols="100" rows="20" name="pText" placeholder="paragraph 1"></textarea>
+            <input type="submit" class="create-wiki" name="create" value="Create">
+        </form>
+    </div>
+</body>
+<script src="js/createWiki.js"></script>
+</html>
