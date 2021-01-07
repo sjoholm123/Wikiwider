@@ -1,3 +1,10 @@
+<?php
+if(!isset($_SERVER['HTTP_REFERER'])){
+    // Skicka dig till error.php
+    header('location:../index.html');
+    exit;
+}
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
