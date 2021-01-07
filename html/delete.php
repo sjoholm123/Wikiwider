@@ -1,4 +1,11 @@
 <?php
+
+if(!isset($_SERVER['HTTP_REFERER'])){
+    // Skicka dig till error.php
+    header('location:/gitten/Wikiwider/html/');
+    exit;
+}
+
     session_start();
 
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {  //global username och API, skicka med username till varje sida
