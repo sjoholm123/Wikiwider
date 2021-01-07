@@ -28,7 +28,7 @@
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;
         //skicka till loggedin.php
-        header('location: loggedinLocal.php');
+        header('location: loggedin.php');
     }
     echo $result;
 ?>
