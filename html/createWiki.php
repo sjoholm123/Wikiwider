@@ -1,42 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="createWiki.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
 <?php
-    session_start();
-
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {  //global username och API, skicka med username till varje sida
-        echo "<p class='user'>" . strtoupper($_SESSION['username'] .  "</p>");
-       $_SESSION['password'];
-
-    $API = $_SESSION['API'];
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){ //global username och API, skicka med username till varje sida         
+    echo "<p class='user'>" . strtoupper($_SESSION['username'] . "</p>"); 
+    $_SESSION['API'];
+    $_SESSION['password'];
+    $pageTitle = $_SESSION['pageTitle'];
+    $pageID = $_SESSION['pageID'];
+    
 } else {
     header('Location: index.html');
 }
 
-    $pageTitle = $_POST['pageTitle'];   // POST med genom form
-    $serviceID = '7';
-
-    $data = array(                      //datan du skickar med i formen
-        'pageTitle' => ''.$pageTitle,
-        'serviceID' => ''.$serviceID
-    );
-
-    
-    $payload = json_encode($data);      //konverterar in till Json
-    $ch = curl_init("https://wider.ntigskovde.se/api/pages/create_page.php?API=$API");  //kolla så att filsökvägen är rätt /api/*/*.php?API=$API
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-    $result = curl_exec($ch);
-    curl_close($ch);
-
-
-    if($result == 'nono'){
-        header('location: index.html');
-    }
-    else{
-        //skicka till loggedin.php
-        header("'Location: createPost.php?");
-        echo $result;
-    }
-       
-    // echo $result för att kolla om executen funka
 ?>
+
+    <!--<p class="yeet">Add Subheading</p>-->
+    <nav>
+        <div class="tools">
+            <div id="add_subheader" class="section">
+                <img title="Add Subheader" class="add_subheader" src="bilder/add_subheader.svg">
+            </div>
+            <div id="add_paragraph" class="section">
+                <img title="Add Paragraph" class="add_field" src="bilder/add_field_icon.svg">
+            </div>
+            <div id="add_image" class="section">
+                <img title="Add Image" class="add_image" src="bilder/add-image.svg">
+            </div>
+            <div id="add-infobox" class="section">
+                    <img title="Add infobox" class="add_infobox" src="bilder/info-icon.svg">
+            </div>
+        </div>
+        <button class="cancel">Cancel</button>
+    </nav>
+
+    <div class="container">
+        <form class="form" action="createWiki.php" method="post">
+            <input class="heading" type="text" name="pageTitle" value="<?php echo $pageTitle ?>" placeholder="Heading">
+            <input type="submit" class="create-wiki" name="create" value="Create">
+        </form>
+    </div>
+</body>
+<script src="createWiki.js"></script>
+</html>
