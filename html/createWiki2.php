@@ -14,15 +14,19 @@
     $postTitle = $_POST['postTitle'];
     $pText = $_POST['pText'];
     $username = $_POST['username'];
+    $pageID = $_POST['pageID'];
+    $imageURL = $_POST['imageURL'];
 
     $data = array(
         'postTitle' => ''.$postTitle,
         'pText' => ''.$pText,
-        'username' => ''.$username
+        'username' => ''.$username,
+        'pageID' => ''.$pageID,
+        'imageURL' => ''.$imageURL
     );
 
-    $payload = json_encode($data);
-    $ch = curl_init("https://wider.ntigskovde.se/api/pages/create_post.php?API=$API");
+    $payload = json_encode($data);      //konverterar in till Json
+    $ch = curl_init("https://wider.ntigskovde.se/api/pages/create_post.php?API=$API");  //kolla så att filsökvägen är rätt /api/*/*.php?API=$API
     curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -36,7 +40,7 @@
     }
     else{
         //skicka till loggedin.php
-        header('location: loggedin.php');
+        header('location: loggedinLocal.php');
     }
 
     echo $result;   // echo $result för att kolla om executen funka
