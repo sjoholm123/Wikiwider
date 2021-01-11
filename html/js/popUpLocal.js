@@ -1,6 +1,6 @@
 $(function() {
   var expanded = false;
-    $('#register').click(function() {
+    $('#signingUp').click(function() {
       if (!expanded) {
         $(".register-form").css("visibility", "visible");
         $(".login-form").css("visibility", "hidden");
@@ -47,7 +47,7 @@ $(function() {
 
 $(function() {
   var expanded = false;
-    $('#sign-in').click(function() {
+    $('#loggingIn').click(function() {
       if (!expanded) {
         $(".login-form").css("visibility", "visible");
         $(".register-form").css("visibility", "hidden");

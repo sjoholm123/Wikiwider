@@ -11,9 +11,18 @@
     <title>Document</title>
 </head>
 <body>
-            <div class="header">
+    <div class="header">
             <img class="marvel" src="bilder/marvelwiki.png">
     </div>
+    <div class="menu-btn" id="one">
+        <i class="fas fa-user"></i>
+        </div>
+        <div class="menu-btn" id="two" onclick="location.href='createWikiLocal.html'">
+            <i class="fas fa-plus"></i>
+        </div>  
+        <div class="menu-btn signOut" id="three" onclick="location.href='index.html'">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>  
     <div class="containS">
     <img onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()" class="image" id="spider" src="bilder/spiderman.png">
     <div class="redBG" id="edit" onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()">SPIDER-MAN</div>
@@ -35,16 +44,14 @@
  <button type="submit" class="far fa-search blackhover">
      </button>
     </form>
-    <div class="menu-btn" id="one">
-        <i class="fas fa-user"></i>
-        </div>
-        <div class="menu-btn" id="two" onclick="location.href='createWikiLocal.html'">
-            <i class="fas fa-plus"></i>
-        </div>  
-        <div class="menu-btn signOut" id="three" onclick="location.href='index.html'">
-            <i class="fas fa-sign-out-alt"></i>
-        </div>  
 <?php
+
+if(!isset($_SERVER['HTTP_REFERER'])){
+    // Skicka dig till error.php
+    header('location:/gitten/Wikiwider/html/');
+    exit;
+}
+
     error_reporting(E_ALL ^ E_NOTICE);
     session_start();
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {  //global username och API, skicka med username till varje sida
@@ -66,6 +73,7 @@
     curl_close($ch);
 
     $bos = json_decode($result);
+    
     echo "<div class='table' id='table'>";
 
     foreach ($bos as $row){

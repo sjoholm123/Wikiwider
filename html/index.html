@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/styleindex.css">
     <link href="https://fonts.googleapis.com/css2?family=Marvel&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -68,4 +69,35 @@
 <script src="js/popUpLocal.js"></script>
 <script type="text/javascript" src="js/marvel.js"></script>
 
+    <div class="background">
+        <img class="marvel" src="bilder/marvelwiki.png">
+        <img class="image" src="bilder/login-banner.png">
+    </div>
+
+    <div class="login-form">
+        <form class="login" action="login.php" method="post">
+            <input class="username" type="text" name="username"
+                onfocus="ifocus(this)"
+                onblur="iblur(this)"
+            >
+            <label for="username" class="username-label">Username</label>
+            <br>
+            <input class="password" type="password" name="password"
+                onfocus="ifocus2(this)"
+                onblur="iblur2(this)"
+            >
+            <label for="password" class="password-label">Password</label>
+            <input type="submit" class="login-btn" value="Login">
+        </form>
+        <div class="pos">
+            <span class="register-link">Dont have an account? <a href="" class="link" id="signingUp">Sign up</a></span>
+        </div>
+    </div>
+    <form action="search.php" method="get">
+        <div class="search"><input type="text" placeholder="Search for.." name="pageTitle"></div>
+     <button type="submit" class="far fa-search blackhover">
+         </button>
+        </form>
+</body>
+<script src="js/marvel.js"></script>
 </html>
