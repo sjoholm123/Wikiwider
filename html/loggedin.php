@@ -21,39 +21,50 @@
     } else {
         header('Location: index.html');
     }
-    ?>
+?>
     <div class="header">
-            <img class="marvel" src="bilder/marvelwiki.png">
+        <img class="marvel" src="bilder/marvelwiki.png">
     </div>
+    
     <div class="menu-btn" id="one">
         <i class="fas fa-user"></i>
-        </div>
-        <div class="menu-btn" id="two" onclick="location.href='createWikiLocal.html'">
-            <i class="fas fa-plus"></i>
-        </div>  
-        <div class="menu-btn signOut" id="three" onclick="location.href='index.html'">
-            <i class="fas fa-sign-out-alt"></i>
-        </div>  
+    </div>
+
+    <div class="menu-btn" id="two">
+        <i class="fas fa-plus"></i>
+    </div>
+
+    <div class="menu-btn signOut" id="three" onclick="location.href='index.html'">
+        <i class="fas fa-sign-out-alt"></i>
+    </div>
+
     <div class="containS">
-    <img onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()" class="image" id="spider" src="bilder/spiderman.png">
-    <div class="redBG" id="edit" onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()">SPIDER-MAN</div>
-</div>
-<div class="containC">
-    <img onmouseover="mouseoverBox2()" onmouseout="onmouseoutBox2()" class="image" id="captain" src="bilder/captain.png">
-    <div class="redBG" id="create" onmouseover="mouseoverBox2()" onmouseout="onmouseoutBox2()">CAPTAIN AMERICA</div>
-</div>
-<div class="containH">
-    <img onmouseover="mouseoverBox3()" onmouseout="onmouseoutBox3()" class="image" id="hulk" src="bilder/hulk.png">
-    <div class="redBG" id="delete" onmouseover="mouseoverBox3()" onmouseout="onmouseoutBox3()">THE HULK</div>
-</div>
-<div class="containT">
-    <img onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" class="image" id="thor" src="bilder/thor.png">
-    <div class="redBG" id="logout" onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" onclick="location.href='index.html';">THOR</div>
-</div>
-<form action="search.php" method="get">
-    <div class="search"><input type="text" placeholder="Search for.." name="pageTitle"></div>
- <button type="submit" class="far fa-search blackhover">
-     </button>
+        <img onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()" class="image" id="spider" src="bilder/spiderman.png">
+        <div class="redBG" id="edit" onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()">SPIDER-MAN</div>
+    </div>
+    <div class="containC">
+        <img onmouseover="mouseoverBox2()" onmouseout="onmouseoutBox2()" class="image" id="captain" src="bilder/captain.png">
+        <div class="redBG" id="create" onmouseover="mouseoverBox2()" onmouseout="onmouseoutBox2()">CAPTAIN AMERICA</div>
+    </div>
+    <div class="containH">
+        <img onmouseover="mouseoverBox3()" onmouseout="onmouseoutBox3()" class="image" id="hulk" src="bilder/hulk.png">
+        <div class="redBG" id="delete" onmouseover="mouseoverBox3()" onmouseout="onmouseoutBox3()">THE HULK</div>
+    </div>
+    <div class="containT">
+        <img onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" class="image" id="thor" src="bilder/thor.png">
+        <div class="redBG" id="logout" onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" onclick="location.href='index.html';">THOR</div>
+    </div>
+
+    <form action="search.php" method="get">
+        <div class="search"><input type="text" placeholder="Search for.." name="pageTitle"></div>
+        <button type="submit" class="far fa-search blackhover"></button>
+    </form>
+
+    <form class="new-article" action="newPage.php" method="POST">
+        <h1 class="h1">New Article</h1>
+        <input class="Title" type="text" placeholder="Article Title" name="pageTitle">
+        <input class="article-submit" value="Create" type="submit">
+        <button type="button" class="cancel">Cancel</button>
     </form>
 
 </body>
