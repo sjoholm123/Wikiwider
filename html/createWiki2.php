@@ -15,14 +15,12 @@
     $pText = $_POST['pText'];
     $username = $_POST['username'];
     $pageID = $_POST['pageID'];
-    $imageURL = $_POST['imageURL'];
 
     $data = array(
         'postTitle' => ''.$postTitle,
         'pText' => ''.$pText,
         'username' => ''.$username,
-        'pageID' => ''.$pageID,
-        'imageURL' => ''.$imageURL
+        'pageID' => ''.$pageID
     );
 
     $payload = json_encode($data);      //konverterar in till Json
@@ -34,13 +32,12 @@
     $result = curl_exec($ch);
     curl_close($ch);
 
-
     if($result == 'nono'){
         header('location: index.html');
     }
     else{
         //skicka till loggedin.php
-        header('location: loggedinLocal.php');
+        header('location: loggedin.php');
     }
 
     echo $result;   // echo $result för att kolla om executen funka
