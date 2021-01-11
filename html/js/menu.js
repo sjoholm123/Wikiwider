@@ -25,3 +25,33 @@ $(function()
     
                       
  });
+
+ $(function() {
+  var expanded = false;
+    $('#two').click(function() {
+      if (!expanded) {
+        $(".new-article").css("visibility", "visible");
+        expanded = true;
+    } else {
+        $(".new-article").css("visibility", "visible");
+        expanded = false;
+    }
+  });
+});
+
+$(function() {
+  var expanded = false;
+    $('.cancel').click(function() {
+      if (!expanded) {
+        $(".new-article").css("visibility", "hidden");
+        $(".cancel").css("transition", "0s");
+        $(".article-submit").css("transition", "0s");
+        expanded = true;
+    } else {
+        $(".new-article").css("visibility", "hidden");
+        $(".cancel").css("transition", "0s");
+        $(".article-submit").css("transition", "0s");
+        expanded = false;
+    }
+  });
+});

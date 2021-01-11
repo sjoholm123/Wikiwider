@@ -161,4 +161,76 @@ input{
     transform: translateY(-9vh);
 }
 
+.new-article {
+    position: absolute;
+    width: 40vw;
+    height: 25vh;
+    background-color: #b43327c4;
+    margin-top: 37.5vh;
+    margin-left: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 2;
+    border-radius: 0.375vw;
+}
 
+.h1 {
+    position: absolute;
+    top: 15%;
+    font-size: 3.5vh;
+    font-family: sans-serif;
+    color: white;
+}
+
+.article-submit {
+    position: absolute;
+    margin-top: 18%;
+    margin-left: 50%;
+    width: 5vw;
+    height: 4.5vh;
+    border-radius: 2vw;
+    border: 0.35vh solid white;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cancel {
+    position: absolute;
+    color: white;
+    margin-top: 18%;
+    margin-left: 80%;
+    width: 5vw;
+    height: 4.5vh;
+    border-radius: 2vw;
+    border: 0.35vh solid white;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+}
+
+.article-submit:hover {
+    background-color: white;
+    color: black;
+    border: 0.35vh solid white;
+}
+
+.cancel:hover {
+    background-color: white;
+    color: black;
+    border: 0.35vh solid white;
+}
+
+.Title {
+    position: relative;
+    width: 80%;
+    height: 20%;
+    box-sizing: border-box;
+    color: black;
+    padding-left: 0.5vw;
+    outline: none;
+}
