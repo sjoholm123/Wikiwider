@@ -92,10 +92,8 @@ input{
     background-color: #DC332E;
     display: flex;
     align-items: center;
-    visibility: show;
     box-shadow: -1vw 4vh 8vw rgb(102, 3, 3);
-
-    visibility: hidden;
+    visibility: show;
 }
 
 .username {
@@ -217,7 +215,9 @@ password:not(:focus):valid ~ .password-label {
 .register-link {
     position: relative;
 }
-
+.login-link{
+    position: relative;
+}
 .pos {
     position: absolute;
     width: 35.75vw;
@@ -255,7 +255,7 @@ password:not(:focus):valid ~ .password-label {
     background-color: aliceblue;
     left: 0;
     margin-right: 8vw;
-    background: url("login-banner.png");
+    background: url("../bilder/login-banner.png");
     background-size: 100% auto;
 }
 .regi-banner {
@@ -264,6 +264,6 @@ password:not(:focus):valid ~ .password-label {
     height: 100%;
     left: 0;
     margin-right: 8vw;
-    background-image: url("regi-banner.png");
+    background-image: url("../bilder/regi-banner.png");
     background-size: 100%;
 }

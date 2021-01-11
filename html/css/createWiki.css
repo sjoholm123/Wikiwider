@@ -153,6 +153,9 @@ nav {
     outline: none;
     transition: 0.2s;
 }
+.deleteIcon{
+    width: 1.5vw;
+}
 
 .create-wiki:hover {
     background-color: white;
