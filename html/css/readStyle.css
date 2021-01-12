@@ -1,0 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.postTitle{
+    color: red;
+    background-color: rgb(217, 255, 0);
+}

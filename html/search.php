@@ -20,7 +20,7 @@
         <div class="menu-btn" id="two" onclick="location.href='createWikiLocal.html'">
             <i class="fas fa-plus"></i>
         </div>  
-        <div class="menu-btn signOut" id="three" onclick="location.href='index.html'">
+        <div class="menu-btn signOut" id="three" onclick="location.href='logout.php'">
             <i class="fas fa-sign-out-alt"></i>
         </div>  
     <div class="containS">
@@ -73,9 +73,9 @@ if(!isset($_SERVER['HTTP_REFERER'])){
     curl_close($ch);
 
     $bos = json_decode($result);
-    
     echo "<div class='table' id='table'>";
 
+   
     foreach ($bos as $row){
                echo nl2br ("<a href='delete.php?pageID=$row->pageID' class='far fa-times'></a><a href='read.php?pageID=$row->pageID' class='aText' id='$row->pageID' name='pageID'>$row->pageTitle</a>");   
                echo "<br>";

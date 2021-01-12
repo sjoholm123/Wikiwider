@@ -33,7 +33,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
     );
 
     $payload = json_encode($data);
-    $ch = curl_init("https://wider.ntigskovde.se/api/pages/search_page.php?API=$API&search=$pageTitle&serviceID=0");
+    $ch = curl_init("https://wider.ntigskovde.se/api/pages/search_page.php?API=$API&search=$pageTitle&serviceID=7");
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($ch);

@@ -39,6 +39,6 @@
         //skicka till loggedin.php
         header('location: loggedin.php');
     }
-*/
+
     echo $result;   // echo $result för att kolla om executen funka
 ?>
