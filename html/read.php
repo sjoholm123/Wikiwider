@@ -18,12 +18,6 @@ if(!isset($_SERVER['HTTP_REFERER'])){
 }
 
 $pageID = $_GET['pageID'];      // GET genom form eller href 
-
-    /*    $data = array(
-        'pageID' => ''.$pageID          
-    );
-    */ //datan som ska postas med i arrayen
-
     
   // payloaden behövs när du ska posta data, $payload = json_encode($data);
     $ch = curl_init("https://wider.ntigskovde.se/api/pages/read_post_page.php?API=$API&pageID=$pageID");    //kolla så att filsökvägen är rätt /api/*/*.php?API=$API
@@ -32,19 +26,12 @@ $pageID = $_GET['pageID'];      // GET genom form eller href
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $result = curl_exec($ch);
-    curl_close($ch);
-/*
-    if($result == 'nono'){
-        header('location: index.html');
-    }
-    else{
-        $_SESSION['API'] = trim($result);
-        $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
-        //skicka till loggedin.php
-        header('location: loggedin.php');
-    }
-    */
-    echo $result;  // echo $result för att kolla om executen funka
+    curl_close($ch);  // echo $result för att kolla om executen funka
+
+    $decoded = json_decode($result, true);
+
+    print_r($decoded);
+
+    echo $decoded['posts']['0']['postTitle'];
+    echo $decoded['posts']['0']['pText'];
 ?>
