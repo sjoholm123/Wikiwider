@@ -44,7 +44,7 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
    
     //$json = json_encode($result)
   $json = json_decode($result, true);
-
+  print_r($json);
   echo '<div class="postTitle">';
   echo $json['posts']['0']['postTitle'];
   echo '</div>';
