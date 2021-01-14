@@ -11,6 +11,7 @@
     <title>Document</title>
 </head>
 <body>
+<div class="container"></div>
 <?php
 
 if(!isset($_SERVER['HTTP_REFERER'])){
@@ -45,18 +46,32 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
     //$json = json_encode($result)
   $json = json_decode($result, true);
 
+  //print_r($json);
+
+  echo '<div class="pageTitle">';
+  echo $json['posts']['0']['pageTitle'];
+
+  echo '<div class="cokeline">';
   echo '<div class="postTitle">';
   echo $json['posts']['0']['postTitle'];
-  echo '</div>';
+
+  echo '<div class="pText">';
   echo $json['posts']['0']['pText'];
+
+  echo '<div class="postDate">';
+  echo $json['posts']['0']['postDate'];
+  echo '</div>';
+  echo '</div>';
+  echo '</div>';
+  echo '</div>';
+  echo '</div>';
+
+  echo '<div class="imageURL">';
+  echo $json['posts']['0']['imageURL'];
+  echo '</div>';
 
 ?>
 </body>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="js/highlight.js"></script>
-<script src="js/popUpLocal.js"></script>
-<script src="js/alert.js"></script>
-<script type="text/javascript" src="js/marvel.js"></script>
-<script src="js/menu.js"></script>
 </html>
