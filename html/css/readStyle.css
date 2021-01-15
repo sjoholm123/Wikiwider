@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(233,75,60);
+}
+::-webkit-scrollbar{
+    width: 0vw;
+}
+.user{
+    visibility: hidden;
+}
+.container{
+    background-color: rgb(180, 51, 39);
+    position: absolute;
+    min-height: 110.5vh;
+    width: 90vw;
+    top: 15vh;
+    left: 5vw;
+}
+.pageTitle{
+    position: absolute;
+    left: 7vw;
+    top: 17.5vh;
+    width: 40vw;
+    color: white;
+    font-family: 'Marvel';
+    font-size: 3vw;
+    font-weight: 900;
+}
+.cokeline{
+    position: absolute; 
+    width: 90vw;
+    height: 0.75vh;
+    left: -2vw;
+    background-color: white;
+    margin-top: 1vh;
+}
+.postTitle{
+    position: relative;
+    width: 40vw;
+    left: 2vw;
+    color: white;
+    font-family: 'Marvel';
+    font-size: 2vw;
+    font-weight: 600;
+    margin-top: 4vh;
+}
+.pText{
+    position: relative;
+    color: white;
+    left: 2vw;
+    font-family: 'Marvel';
+    font-size: 1.5vw;
+    width: 60vw;
+    margin-top: 1vh;
+}
+.postDate{
+    position: relative;
+    margin-top: 1vh;
+    left: 2vw;
+    font-size: 1.25vw;
+}
