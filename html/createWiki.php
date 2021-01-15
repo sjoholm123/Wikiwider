@@ -44,7 +44,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){ //global use
     </nav>
 
     <div class="container">
-        <form class="form" action="createWiki2.php" method="post">
+        <form class="form" action="createWiki2.php" method="post" enctype="multipart/form-data">
             <input class="heading" type="text" name="pageTitle" value="<?php echo $pageTitle ?>" placeholder="Heading">
             <input type="hidden" name="username" value="<?php echo $username ?>">
             <input type="hidden" name="pageID" value="<?php echo $pageID ?>">

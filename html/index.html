@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styleindex.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Marvel&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -29,14 +30,19 @@
             <input type="submit" class="login-btn" value="Login">
         </form>
         <div class="pos">
-            <span class="register-link">Dont have an account? <a href="" class="link" id="signingUp">Sign up</a></span>
+            <span class="register-link">Dont have an account? <a class="link" id="signingUp">Sign up</a></span>
         </div>
     </div>
-    <form action="search.php" method="get">
-        <div class="search"><input type="text" placeholder="Search for.." name="pageTitle"></div>
-     <button type="submit" class="far fa-search blackhover">
-         </button>
-        </form>
+    <form class="register" action="register.php" method="post">
+        <input class="regi user" type="text" name="user" placeholder="Username">
+        <input class="regi pass" type="password" name="pass" placeholder="Password">
+        <input class="regi firstName" type="text" name="firstName" placeholder="First Name">
+        <input class="regi middleName" type="text" name="middleName" placeholder="Middle Name">
+        <input class="regi lastName" type="text" name="lastName" placeholder="Last Name">
+        <input type="submit" class="button" value="Register">
+    </form>
+
 </body>
+<script src="js/createUser.js"></script>
 <script src="js/marvel.js"></script>
 </html>

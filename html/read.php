@@ -46,22 +46,26 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
     //$json = json_encode($result)
   $json = json_decode($result, true);
 
-  //print_r($json);
 
   echo '<div class="pageTitle">';
   echo $json['posts']['0']['pageTitle'];
 
   echo '<div class="cokeline">';
-  echo '<div class="postTitle">';
-  echo $json['posts']['0']['postTitle'];
 
-  echo '<div class="pText">';
-  echo $json['posts']['0']['pText'];
+  for($i=0; $i < count($json['posts']); $i++) {
+    echo '<div class="postTitle">';
+    echo $json['posts'][$i]['postTitle'];
+    echo '</div>';
+    echo '<div class="pText">';
+    echo $json['posts'][$i]['pText'];
+    echo '</div>';
+  }
+
+  echo '<div class="imageURL">';
+  echo $json['posts']['0']['imageURL'];
 
   echo '<div class="postDate">';
   echo $json['posts']['0']['postDate'];
-  echo '</div>';
-  echo '</div>';
   echo '</div>';
   echo '</div>';
   echo '</div>';
