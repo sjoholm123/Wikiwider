@@ -14,7 +14,7 @@ $(document).ready(function() {
         e.preventDefault();
         if (x < max_fields) {
             x++;
-            $(wrapper).append("<div><input type='text' name='postTitle' class='subheading' placeholder='Subheader "+ (Scount) +"'/><a href='#' class='delete'><img class='deleteIcon' src='bilder/delete.svg'></a></div>"); //add input box
+            $(wrapper).append("<div><input type='text' name='postTitle[]' class='subheading' placeholder='Subheader "+ (Scount) +"'/><a href='#' class='delete'><img class='deleteIcon' src='bilder/delete.svg'></a></div>"); //add input box
             Scount++;
         } else {
             alert('You Reached the limits')
@@ -41,7 +41,7 @@ $(document).ready(function() {
         if (x < max_fields) {
             x++;
             //add input box
-            $(wrapper).append("<div><textarea class='paragraph' name='pText' cols='100' rows='20' placeholder='Paragraph "+ (Pcount) +"'></textarea><a href='#' class='deleteP'><img class='deleteIcon' src='bilder/delete.svg'></a></div>"); 
+            $(wrapper).append("<div><textarea class='paragraph' name='pText[]' cols='100' rows='20' placeholder='Paragraph "+ (Pcount) +"'></textarea><a href='#' class='deleteP'><img class='deleteIcon' src='bilder/delete.svg'></a></div>"); 
             Pcount++;
         } else {
             alert('You Reached the limits')
