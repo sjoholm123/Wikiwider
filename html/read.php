@@ -12,6 +12,21 @@
 </head>
 <body>
 <div class="container"></div>
+<div class="menu">
+  <div class="header">
+    <img class="image" src="bilder/marvelwiki.png">
+  <i class="far fa-times" id="menuCross"></i>
+  </div>
+  
+  <form class="form" action="search.php" method="get">
+<input class="search" id="holder" type="text" placeholder="Search for.." name="pageTitle">
+</form>
+<div class="line"></div>
+<button class="text logOut"  onclick="location.href='logout.php'">Logga Ut</button>
+<button class="text skapa">Skapa Ny Artikel</button>
+<button class="text home"  onclick="location.href='loggedin.php'">Hem</button>
+</div>
+<i class="far fa-bars" id="bars"></i>
 <?php
 
 if(!isset($_SERVER['HTTP_REFERER'])){
@@ -93,6 +108,7 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
 ?>
   
 </body>
+<script src="js/hamburgerMenu.js"></script>
 <script src="js/alertPost.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
