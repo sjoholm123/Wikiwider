@@ -28,10 +28,19 @@ $pageID = $_GET['pageID'];      // GET genom form eller href
     $result = curl_exec($ch);
     curl_close($ch);  // echo $result för att kolla om executen funka
 
-    $decoded = json_decode($result, true);
+    $json = json_decode($result, true);
 
-    print_r($decoded);
+    print_r($json);
 
-    echo $decoded['posts']['0']['postTitle'];
-    echo $decoded['posts']['0']['pText'];
+    //echo $json['posts']['0']['postTitle'];
+    //echo $json['posts']['0']['pText'];
+
+    //foreach($json as $key => $value) {
+      for($i=0; $i < count($json['posts']); $i++) {
+        echo $json['posts'][$i]['postTitle'];
+        echo $json['posts'][$i]['pText'];
+      }
+    //}
+
+
 ?>

@@ -11,14 +11,24 @@
 }
     // POST med genom form
 
+
     $postTitle = $_POST['postTitle'];
+
+    //echo $postTitle;
     $pText = $_POST['pText'];
     $username = $_POST['username'];
     $pageID = $_POST['pageID'];
 
+    var_dump($_POST['pText']);
+    var_dump(count($_POST['postTitle']));
+    for($i=0;$i<count($_POST['postTitle']); $i++) {
+        echo ($_POST['postTitle'][$i]);
+        echo ($_POST['pText'][$i]);
+
+
     $data = array(
-        'postTitle' => ''.$postTitle,
-        'pText' => ''.$pText,
+        'postTitle' => ''.$_POST['postTitle'][$i],
+        'pText' => ''.$_POST['pText'][$i],
         'username' => ''.$username,
         'pageID' => ''.$pageID
     );
@@ -32,6 +42,9 @@
     $result = curl_exec($ch);
     curl_close($ch);
 
+    }
+
+    /*
     if($result == 'nono'){
         header('location: index.html');
     }
@@ -39,6 +52,6 @@
         //skicka till loggedin.php
         header('location: loggedin.php');
     }
-
+*/
     echo $result;   // echo $result för att kolla om executen funka
 ?>
