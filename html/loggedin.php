@@ -69,7 +69,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
     </form>
 
     <form class="new-article" action="newPage.php" method="POST">
-        <h1 class="h1">New Article</h1>
+    <h1 class="h1">New Article</h1>
         <input class="Title" type="text" placeholder="Article Title" name="pageTitle">
         <input class="article-submit" value="Create" type="submit">
         <button type="button" class="cancel">Cancel</button>

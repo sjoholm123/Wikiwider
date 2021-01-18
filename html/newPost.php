@@ -14,8 +14,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){ //global use
     echo "<p class='user'>" . strtoupper($_SESSION['username'] . "</p>"); 
     $_SESSION['API'];
     $_SESSION['password'];
-        $pageID = $_SESSION['pageID'];
-    $pageTitle = $_SESSION['pageTitle'];
+        $pageID = $_GET['pageID'];
+    $pageTitle = $_GET['pageTitle'];
     $username = $_SESSION['username'];
     
 } else {
@@ -45,7 +45,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){ //global use
 
     <div class="container">
         <form class="form" action="createWiki2.php" method="post" enctype="multipart/form-data">
-            <input class="heading" type="text" name="pageTitle" value="<?php echo $pageTitle ?>" placeholder="Heading">
+            <input class="heading" type="text" name="pageTitle" value="<?php echo $pageID    ?>" placeholder="Heading">
             <input type="hidden" name="username" value="<?php echo $username ?>">
             <input type="hidden" name="pageID" value="<?php echo $pageID ?>">
             <input type="submit" class="create-wiki" name="create" value="Create">

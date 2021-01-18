@@ -95,4 +95,5 @@ if(!isset($_SERVER['HTTP_REFERER'])){
 </body>
 <script src="js/menu.js"></script>
 <script src="js/highlight.js"></script>
+<script src="js/alert.js"></script>
 </html>

@@ -47,6 +47,18 @@ body{
     font-weight: 600;
     margin-top: 4vh;
 }
+.delete{
+    position: relative;
+    text-decoration: none;
+    margin-left: 0.7vw;
+    top: 0.2vh;
+    font-size: 1.6vw;
+    color: white;
+    transition: color, 0.25s;
+}
+.delete:hover{
+    color: rgb(233,75,60);
+}
 .pText{
     position: relative;
     color: white;
@@ -61,4 +73,21 @@ body{
     margin-top: 1vh;
     left: 2vw;
     font-size: 1.25vw;
+}
+.bababoi{
+    position: relative;
+    left: 2vw;
+    outline: none;
+    border: none;
+    width: 7vw;
+    height: 5vh;
+    font-family: 'Marvel';
+    font-size: 1.25vw;
+    border-radius: 0.25vw;
+    color: white;
+    background-color: rgb(202, 64, 52);
+    transition: background-color, 0.4s;
+}
+.bababoi:hover{
+    background-color: rgb(233,75,60);
 }

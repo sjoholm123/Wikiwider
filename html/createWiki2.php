@@ -33,7 +33,7 @@
         'pageID' => ''.$pageID
     );
 
-    
+
     $payload = json_encode($data);      //konverterar in till Json
 
     $ch = curl_init("https://wider.ntigskovde.se/api/pages/create_post.php?API=$API");  //kolla så att filsökvägen är rätt /api/*/*.php?API=$API
@@ -50,7 +50,7 @@
 
     }
 
-    /*
+    
     if($result == 'nono'){
         header('location: index.html');
     }
@@ -58,6 +58,6 @@
         //skicka till loggedin.php
         header('location: loggedin.php');
     }
-*/
+    
     echo $result;   // echo $result för att kolla om executen funka
 ?>
