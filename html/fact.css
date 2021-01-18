@@ -187,6 +187,17 @@ input{
 }
 .button{
     position: absolute;
-    top:30vh;
+    top:11vh;
+    left:63vw;
+}
+.btn{
     color:black;
+}
+.jsbutton{
+    position: absolute;
+    top:24vh;
+}
+#response{
+    position: absolute;
+    top:28vh;
 }
