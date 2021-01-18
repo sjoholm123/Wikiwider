@@ -71,6 +71,7 @@ username:not(:focus):valid ~ .username-label {
     position: absolute;
     left: 0vw;
     font-family: 'Marvel';
+    letter-spacing: 1px;
     font-size: 1.25vw;
     font-weight: 900;
     top: 4.5vh;
@@ -83,6 +84,7 @@ username:not(:focus):valid ~ .username-label {
     font-family: 'Marvel';
     font-size: 1.15vw;
     font-weight: 900;
+    letter-spacing: 1px;
     color: white;
     top: 0vh;
     position: absolute;
@@ -126,6 +128,7 @@ password:not(:focus):valid ~ .password-label {
     font-family: 'Marvel';
     font-size: 1.25vw;
     font-weight: 900;
+    letter-spacing: 1px;
     top: 13vh;
     pointer-events: none;
     transition: 0.2s ease all;
@@ -136,6 +139,7 @@ password:not(:focus):valid ~ .password-label {
     position: absolute;
     left: 0vw;
     font-family: sans-serif;
+    letter-spacing: 1px;
     pointer-events: none;
     transition: 0.2s ease all;
     font-family: 'Marvel';
@@ -182,6 +186,8 @@ password:not(:focus):valid ~ .password-label {
 }
 .link{
     color: white;
+    text-decoration: underline;
+    cursor: pointer;
 }
 .search input[type=text]{
     position: absolute;
@@ -215,4 +221,70 @@ input{
     color:  darkgray;
     transition: color 0.4s;
     z-index: 10;
+}
+.register{
+   display: none;
+}
+.regi{
+    position: absolute;
+    width: 29vw;  
+    border: none;
+    outline: none;
+    left: 27.5vw;
+    padding-left: 1vw;
+    color: black;
+    font-size: 1.25vw;
+    font-family: 'Marvel';
+    font-weight: 900;
+    background-color:rgb(247, 80, 65);
+}
+.user{
+    top: 40vh;
+}
+.pass{
+    top: 50vh;
+}
+.firstName{
+    top: 60vh;
+}
+.middleName{
+    top: 70vh;
+}
+.lastName{
+    top: 80vh;
+}
+.button{
+    position: absolute;
+    width: 30vw;  
+    height: 6.2vh;
+    border: none;
+    outline: none;
+    left: 27.5vw;
+    padding-left: 1vw;
+    color: black;
+    font-size: 1.25vw;
+    font-family: 'Marvel';
+    font-weight: 900;
+    background-color:rgb(247, 80, 65);
+    top: 90vh;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: rgb(124, 179, 66);
+    color: white;
+}
+.regi::placeholder{
+    color: black;
+    font-family: 'Marvel';
+    font-size: 1.25vw;
+    transition: 1s;
+}
+.regi:hover::-webkit-input-placeholder, .regi:focus::-webkit-input-placeholder {
+    padding-left: 80%;
+    color: white;
+}
+.middleName:hover::-webkit-input-placeholder, .middleName:focus::-webkit-input-placeholder{
+    padding-left: 77%;
+    color: white;
 }

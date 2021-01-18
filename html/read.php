@@ -11,6 +11,7 @@
     <title>Document</title>
 </head>
 <body>
+<div class="container"></div>
 <?php
 
 if(!isset($_SERVER['HTTP_REFERER'])){
@@ -26,13 +27,13 @@ if(!isset($_SERVER['HTTP_REFERER'])){
       $_SESSION['password'];
 
    $API = $_SESSION['API'];
-
+   $username = $_SESSION['username'];
 } else {
    header('Location: index.html');
 }
 
 $pageID = $_GET['pageID'];   // GET genom form eller href 
-    
+   
   // payloaden behövs när du ska posta data, $payload = json_encode($data);
     $ch = curl_init("https://wider.ntigskovde.se/api/pages/read_post_page.php?API=$API&pageID=$pageID");    //kolla så att filsökvägen är rätt /api/*/*.php?API=$API
     //curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
@@ -44,19 +45,50 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
    
     //$json = json_encode($result)
   $json = json_decode($result, true);
-  print_r($json);
-  echo '<div class="postTitle">';
-  echo $json['posts']['0']['postTitle'];
+
+  $pageTitle = $json['posts']['0']['pageTitle'];
+  
+  echo '<div class="pageTitle">';
+  echo $json['posts']['0']['pageTitle'];
+
+  echo '<div class="cokeline">';
+
+  for($i=0; $i < count($json['posts']); $i++) {
+    $postID = $json['posts'][$i]['postID'];
+    echo '<div class="postTitle">';
+    echo $json['posts'][$i]['postTitle'];
+    echo '<a href="deletePost.php?postID='.$postID.'" class="far fa-times delete"></a>';
+    echo '</div>';
+    echo '<div class="pText">';
+    echo $json['posts'][$i]['pText'];
+    echo '</div>';
+    echo '<div class="postDate">';
+    echo $json['posts'][$i]['postDate'];
+    echo '</div>';
+  }
+
+  echo '<div class="imageURL">';
+  echo $json['posts']['0']['imageURL'];
   echo '</div>';
-  echo $json['posts']['0']['pText'];
+
+  echo '<form class="create" action="newPost.php?pageID='.$pageID.'pageTitle='.$pageTitle.'" method="POST">
+  
+  <div class="create"><button class="bababoi type="submit">Skapa Post</button></div>
+</form>';
+
+  echo '</div>';
+
+
+  echo '<div class="imageURL">';
+  echo $json['posts']['0']['imageURL'];
+  echo '</div>';
+  
+
 
 ?>
+  
 </body>
+<script src="js/alertPost.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="js/highlight.js"></script>
-<script src="js/popUpLocal.js"></script>
-<script src="js/alert.js"></script>
-<script type="text/javascript" src="js/marvel.js"></script>
-<script src="js/menu.js"></script>
 </html>

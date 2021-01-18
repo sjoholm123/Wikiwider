@@ -41,9 +41,9 @@ if(!isset($_SERVER['HTTP_REFERER'])){
         <i class="fas fa-plus"></i>
     </div>
 
-    <div class="menu-btn signOut" id="three" onclick="location.href='index.html'">
-        <i class="fas fa-sign-out-alt"></i>
-    </div>
+    <div class="menu-btn signOut" id="three" onclick="location.href='logout.php'">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>  
 
     <div class="containS">
         <img onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()" class="image" id="spider" src="bilder/spiderman.png">
@@ -62,13 +62,14 @@ if(!isset($_SERVER['HTTP_REFERER'])){
         <div class="redBG" id="logout" onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" onclick="location.href='index.html';">THOR</div>
     </div>
 
-    <form action="search.php" method="get">
-        <div class="search"><input type="text" placeholder="Search for.." name="pageTitle"></div>
-        <button type="submit" class="far fa-search blackhover"></button>
+    <form class="form" action="search.php" method="get">
+<input class="search" id="holder" type="text" placeholder="Search for.." name="pageTitle">
+ <button type="submit"><i id="submit" class="far fa-search blackhover"></i>
+     </button>
     </form>
 
     <form class="new-article" action="newPage.php" method="POST">
-        <h1 class="h1">New Article</h1>
+    <h1 class="h1">New Article</h1>
         <input class="Title" type="text" placeholder="Article Title" name="pageTitle">
         <input class="article-submit" value="Create" type="submit">
         <button type="button" class="cancel">Cancel</button>
