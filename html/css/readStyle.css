@@ -267,3 +267,18 @@ body{
     padding-left: 0.5vw;
     outline: none;
 }
+.button {
+    position: relative;
+    left: 80vw;
+    top:-10vh;
+    outline: none;
+    border: none;
+    width: 7vw;
+    height: 5vh;
+    font-family: 'Marvel';
+    font-size: 1.25vw;
+    border-radius: 0.25vw;
+    color: white;
+    background-color: rgb(202, 64, 52);
+    transition: background-color, 0.4s;
+  }

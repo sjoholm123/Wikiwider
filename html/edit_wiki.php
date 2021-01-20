@@ -11,13 +11,13 @@
 }
 
 $postID = $_POST['postID'];      // GET genom form eller href 
-//$pageTitle = $_POST['pageTitle'];
+$pageTitle = $_POST['pageTitle'];
 $postTitle = $_POST['postTitle'];
 $pText = $_POST['pText'];
 
         $data = array(
         'postID' => ''.$postID,  
-        //'pageTitle' => ''.$pageTitle,
+        'pageTitle' => ''.$pageTitle,
         'postTitle' => ''.$postTitle,
         'pText' => ''.$pText        
     );

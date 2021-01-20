@@ -195,9 +195,13 @@ input{
 }
 .jsbutton{
     position: absolute;
-    top:24vh;
+    top:30vh;
 }
 #response{
     position: absolute;
-    top:28vh;
+    top:33vh;
+}
+.postID{
+    position: absolute;
+    top:24vh;
 }

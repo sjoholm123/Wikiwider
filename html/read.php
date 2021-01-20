@@ -104,6 +104,11 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
   echo '<div class="imageURL">';
   echo $json['posts']['0']['imageURL'];
   echo '</div>';
+
+  echo '<form class="create" action="edit_wiki.html?postID='.$postID.'pageTitle='.$pageTitle.'" method="POST">
+  
+  <div class="create"><button class="button type="submit">Edit Page</button></div>
+</form>';
   
 
 
