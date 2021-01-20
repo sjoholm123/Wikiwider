@@ -81,7 +81,7 @@ curl_multi_remove_handle($mh, $ch);
 curl_multi_remove_handle($mh, $ch2);
 curl_multi_close($mh);
 
-/*
+
     if($status != CURLM_OK){
         header('location: index.html');
     }
@@ -89,6 +89,6 @@ curl_multi_close($mh);
         //skicka till loggedin.php
         header('location: loggedin.php');
     }
-    */
+    
     echo $status;        // echo $result för att kolla om executen funka
 ?>

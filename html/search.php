@@ -23,22 +23,22 @@
         <div class="menu-btn signOut" id="three" onclick="location.href='logout.php'">
             <i class="fas fa-sign-out-alt"></i>
         </div>  
-    <div class="containS">
-    <img onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()" class="image" id="spider" src="bilder/spiderman.png">
-    <div class="redBG" id="edit" onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()">SPIDER-MAN</div>
-</div>
-<div class="containC">
-    <img onmouseover="mouseoverBox2()" onmouseout="onmouseoutBox2()" class="image" id="captain" src="bilder/captain.png">
-    <div class="redBG" id="create" onmouseover="mouseoverBox2()" onmouseout="onmouseoutBox2()">CAPTAIN AMERICA</div>
-</div>
-<div class="containH">
-    <img onmouseover="mouseoverBox3()" onmouseout="onmouseoutBox3()" class="image" id="hulk" src="bilder/hulk.png">
-    <div class="redBG" id="delete" onmouseover="mouseoverBox3()" onmouseout="onmouseoutBox3()">THE HULK</div>
-</div>
-<div class="containT">
-    <img onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" class="image" id="thor" src="bilder/thor.png">
-    <div class="redBG" id="logout" onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" onclick="location.href='index.html';">THOR</div>
-</div>
+        <div class="containS">
+        <img onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()" class="image" id="spider" src="bilder/spiderman.png">
+        <div onclick="location.href='read.php?pageID=384'" class="redBG" id="edit" onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()">SPIDER-MAN</div>
+    </div>
+    <div class="containC">
+        <img onmouseover="mouseoverBox2()" onmouseout="onmouseoutBox2()" class="image" id="captain" src="bilder/captain.png">
+        <div onclick="location.href='read.php?pageID=385'" class="redBG" id="create" onmouseover="mouseoverBox2()" onmouseout="onmouseoutBox2()">CAPTAIN AMERICA</div>
+    </div>
+    <div class="containH">
+        <img onmouseover="mouseoverBox3()" onmouseout="onmouseoutBox3()" class="image" id="hulk" src="bilder/hulk.png">
+        <div onclick="location.href='read.php?pageID=425'" class="redBG" id="delete" onmouseover="mouseoverBox3()" onmouseout="onmouseoutBox3()">THE HULK</div>
+    </div>
+    <div class="containT">
+        <img onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" class="image" id="thor" src="bilder/thor.png">
+        <div onclick="location.href='read.php?pageID=426'" class="redBG" id="logout" onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()">THOR</div>
+    </div>
 <form class="form" action="search.php" method="get">
 <input class="search" id="holder" type="text" placeholder="Search for.." name="pageTitle">
  <button type="submit"><i id="submit" class="far fa-search blackhover"></i>

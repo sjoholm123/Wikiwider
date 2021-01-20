@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-<div class="container"></div>
+<div class="container1"></div>
 <div class="menu">
   <div class="header">
     <img class="image" src="bilder/marvelwiki.png">
@@ -22,9 +22,9 @@
 <input class="search" id="holder" type="text" placeholder="Search for.." name="pageTitle">
 </form>
 <div class="line"></div>
-<button class="text logOut"  onclick="location.href='logout.php'">Logga Ut</button>
-<button class="text skapa">Skapa Ny Artikel</button>
-<button class="text home"  onclick="location.href='loggedin.php'">Hem</button>
+<button class="text logOut"  onclick="location.href='logout.php'">Log Out</button>
+<button class="text skapa">Create Article</button>
+<button class="text home"  onclick="location.href='loggedin.php'">Home</button>
 </div>
 
 <i class="far fa-bars" id="bars"></i>
@@ -97,7 +97,7 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
 
   echo '<form class="create" action="newPost.php?pageID='.$pageID.'pageTitle='.$pageTitle.'" method="POST">
   
-  <div class="create"><button class="bababoi type="submit">Skapa Post</button></div>
+  <div class="create"><button class="bababoi type="submit">Create Post</button></div>
 </form>';
 
   echo '</div>';
