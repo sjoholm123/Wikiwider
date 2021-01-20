@@ -13,8 +13,6 @@
 
 
     $postTitle = $_POST['postTitle'];
-
-    //echo $postTitle;
     $pText = $_POST['pText'];
     $username = $_POST['username'];
     $pageID = $_POST['pageID'];
@@ -49,7 +47,6 @@
     curl_close($ch);
 
     }
-
     
     if($result == 'nono'){
         header('location: index.html');
@@ -58,6 +55,8 @@
         //skicka till loggedin.php
         header('location: loggedin.php');
     }
-    
-    echo $result;   // echo $result för att kolla om executen funka
+
+    print_r($imageURL);
+    echo $result;
+    echo $result2;   // echo $result för att kolla om executen funka
 ?>
