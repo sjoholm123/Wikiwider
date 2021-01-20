@@ -267,18 +267,16 @@ body{
     padding-left: 0.5vw;
     outline: none;
 }
-.button {
+.edit {
     position: relative;
-    left: 80vw;
-    top:-10vh;
-    outline: none;
-    border: none;
-    width: 7vw;
-    height: 5vh;
-    font-family: 'Marvel';
-    font-size: 1.25vw;
-    border-radius: 0.25vw;
+    top:0vh;
+    text-decoration: none;
     color: white;
-    background-color: rgb(202, 64, 52);
-    transition: background-color, 0.4s;
+    font-size: 1.1vw;
+    margin-left: 1vw;
+    top: -0.3vh;
+    transition: 0.2s;
+  }
+  .edit:hover{
+    color: rgb(233,75,60);
   }
