@@ -12,6 +12,28 @@
 </head>
 <body>
 <div class="container"></div>
+<div class="menu">
+  <div class="header">
+    <img class="image" src="bilder/marvelwiki.png">
+  <i class="far fa-times" id="menuCross"></i>
+  </div>
+  
+  <form class="form" action="search.php" method="get">
+<input class="search" id="holder" type="text" placeholder="Search for.." name="pageTitle">
+</form>
+<div class="line"></div>
+<button class="text logOut"  onclick="location.href='logout.php'">Logga Ut</button>
+<button class="text skapa">Skapa Ny Artikel</button>
+<button class="text home"  onclick="location.href='loggedin.php'">Hem</button>
+</div>
+
+<i class="far fa-bars" id="bars"></i>
+<form class="new-article" action="newPage.php" method="POST">
+    <h1 class="h1">New Article</h1>
+        <input class="Title" type="text" placeholder="Article Title" name="pageTitle">
+        <input class="article-submit" value="Create" type="submit">
+        <button type="button" class="cancel">Cancel</button>
+    </form>
 <?php
 
 if(!isset($_SERVER['HTTP_REFERER'])){
@@ -50,6 +72,7 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
   
   echo '<div class="pageTitle">';
   echo $json['posts']['0']['pageTitle'];
+  
 
   echo '<div class="cokeline">';
 
@@ -58,6 +81,7 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
     echo '<div class="postTitle">';
     echo $json['posts'][$i]['postTitle'];
     echo '<a href="deletePost.php?postID='.$postID.'" class="far fa-times delete"></a>';
+    echo '<a href="edit_wiki1.php?postID='.$postID.'" class="fas fa-pen edit"></a>';
     echo '</div>';
     echo '<div class="pText">';
     echo $json['posts'][$i]['pText'];
@@ -82,12 +106,19 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
   echo '<div class="imageURL">';
   echo $json['posts']['0']['imageURL'];
   echo '</div>';
+
+ /* echo '<form class="create" action="edit_wiki.html?postID='.$postID.'pageTitle='.$pageTitle.'" method="POST">
   
+  <div class="create"><button class="button type="submit">Edit Page</button></div>
+</form>';
+  */
 
 
 ?>
   
 </body>
+<script src="js/newArticle.js"></script>
+<script src="js/hamburgerMenu.js"></script>
 <script src="js/alertPost.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

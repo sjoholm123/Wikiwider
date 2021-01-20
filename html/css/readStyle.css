@@ -5,12 +5,113 @@
 body{
     background-color: rgb(233,75,60);
 }
+
 ::-webkit-scrollbar{
     width: 0vw;
 }
 .user{
     visibility: hidden;
 }
+.fa-bars{
+    position: absolute;
+    left: 2vw;
+    top: 4.5vh;
+    font-size: 2vw;
+    color: white;
+}
+.fa-bars:hover{
+    cursor: pointer
+}
+.menu{
+    position: absolute;
+    width: 30vw;
+    height: 125.5vh;
+    background-color: #1b1b1b;
+    z-index: 1;
+    left: -30vw;
+    text-align: center;
+}
+.header{
+    height: 15vh;
+    width: 30vw;
+    background-color: #292929;
+}
+.image{
+    position: relative;
+    top: 3.5vh;
+    width: 12.5vw;
+    filter: invert(1);
+}
+#menuCross{
+    color: white;
+    position: absolute;
+    left: 27vw;
+    top: 4.5vh;
+    font-size: 2vw;
+}
+#menuCross:hover{
+    cursor: pointer;
+}
+.form input[type=text]{
+    color: white;
+    font-family: 'Marvel';
+    font-size: 1.75vw;
+    margin-bottom: 0.2vh;
+    padding-left: 1vw;
+}
+
+.search{
+    position: relative;
+    top: 9vh;
+    display: inline-block;
+    background-color: #242424;
+    border: none;
+    outline: none;
+    width: 22vw;
+    height: 6vh;
+    border-radius: 0.4vw;
+}
+.text{
+    color: white;
+    font-family: 'Marvel';
+    font-size: 1.75vw;
+    transition: 0.4s;
+    outline: none;
+    border: none;
+    width: 30vw;
+    left: 0;
+    height: 7.5vh;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+}
+.skapa{
+    position: absolute;
+    top: 40vh;
+    padding-right: 13.1vw;
+}
+.logOut{
+    position: absolute;
+    top: 47.5vh;
+    padding-right: 17.5vw;
+}
+.home{
+    position: absolute;
+    top: 32.5vh;
+    padding-right: 19.85vw;
+}
+.text:hover{
+    background-color: #292929;
+}
+/*
+.line{
+    position: relative;
+    display: inline-block;
+    top: 17vh;
+    width: 20vw;
+    height: 0.4vh;
+    background-color: white;
+}
+*/
 .container{
     background-color: rgb(180, 51, 39);
     position: absolute;
@@ -90,4 +191,92 @@ body{
 }
 .bababoi:hover{
     background-color: rgb(233,75,60);
+    cursor: pointer;
 }
+.new-article {
+    position: absolute;
+    width: 40vw;
+    height: 25vh;
+    background-color: #94271ec4;
+    margin-top: 37.5vh;
+    margin-left: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 2;
+    border-radius: 0.375vw;
+}
+
+.h1 {
+    position: absolute;
+    top: 15%;
+    font-size: 3.5vh;
+    font-family: 'Marvel';
+    color: white;
+}
+
+.article-submit {
+    position: absolute;
+    margin-top: 18%;
+    margin-left: 50%;
+    width: 5vw;
+    height: 4.5vh;
+    border-radius: 2vw;
+    border: 0.35vh solid white;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+}
+
+.cancel {
+    position: absolute;
+    color: white;
+    margin-top: 18%;
+    margin-left: 80%;
+    width: 5vw;
+    height: 4.5vh;
+    border-radius: 2vw;
+    border: 0.35vh solid white;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+}
+
+.article-submit:hover {
+    background-color: white;
+    color: black;
+    border: 0.35vh solid white;
+}
+
+.cancel:hover {
+    background-color: white;
+    color: black;
+    border: 0.35vh solid white;
+}
+
+.Title {
+    position: relative;
+    width: 80%;
+    height: 20%;
+    box-sizing: border-box;
+    color: black;
+    padding-left: 0.5vw;
+    outline: none;
+}
+.edit {
+    position: relative;
+    top:0vh;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1vw;
+    margin-left: 1vw;
+    top: -0.3vh;
+    transition: 0.2s;
+  }
+  .edit:hover{
+    color: rgb(233,75,60);
+  }
