@@ -25,7 +25,7 @@ body{
 .menu{
     position: absolute;
     width: 30vw;
-    height: 125.5vh;
+    height: 165vh;
     background-color: #1b1b1b;
     z-index: 1;
     left: -30vw;
@@ -88,12 +88,12 @@ body{
 .skapa{
     position: absolute;
     top: 40vh;
-    padding-right: 13.1vw;
+    padding-right: 15.4vw;
 }
 .logOut{
     position: absolute;
     top: 47.5vh;
-    padding-right: 17.5vw;
+    padding-right: 18.9vw;
 }
 .home{
     position: absolute;
@@ -116,7 +116,7 @@ body{
 .container1{
     background-color: rgb(180, 51, 39);
     position: absolute;
-    min-height: 110.5vh;
+    height: 150vh;
     width: 90vw;
     top: 15vh;
     left: 5vw;
@@ -144,7 +144,7 @@ body{
     width: 40vw;
     left: 2vw;
     color: white;
-    font-family: 'Marvel';
+    font-family: 'Times New Roman', Times, serif;
     font-size: 2vw;
     font-weight: 600;
     margin-top: 4vh;
@@ -165,8 +165,9 @@ body{
     position: relative;
     color: white;
     left: 2vw;
-    font-family: 'Marvel';
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5vw;
+    font-weight: 300;
     width: 60vw;
     margin-top: 1vh;
 }
@@ -189,6 +190,7 @@ body{
     color: white;
     background-color: rgb(202, 64, 52);
     transition: background-color, 0.4s;
+    margin-bottom: 10vh;
 }
 .bababoi:hover{
     background-color: rgb(233,75,60);

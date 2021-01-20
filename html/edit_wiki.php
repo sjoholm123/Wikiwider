@@ -11,13 +11,11 @@
 }
 
 $postID = $_POST['postID'];      // GET genom form eller href 
-$pageTitle = $_POST['pageTitle'];
 $postTitle = $_POST['postTitle'];
 $pText = $_POST['pText'];
 
         $data = array(
         'postID' => ''.$postID,  
-        'pageTitle' => ''.$pageTitle,
         'postTitle' => ''.$postTitle,
         'pText' => ''.$pText        
     );
@@ -34,14 +32,13 @@ $pText = $_POST['pText'];
     $result = curl_exec($ch);
     curl_close($ch);
 
-    /*if($result == 'nono'){
+    if($result == 'nono'){
         header('location: index.html');
     }
     else{
         //skicka till loggedin.php
         header('location: loggedin.php');
     }
-    */
     echo $result;  // echo $result för att kolla om executen funka
 
 ?>

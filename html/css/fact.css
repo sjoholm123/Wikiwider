@@ -188,18 +188,50 @@ input{
     color:black;
 }
 .editposttitle{
-    color:black;
+    color:white;
+    background-color: #94271ec4;
+    outline: none;
+    border: none;
+    margin-left: 2vw;
+    padding-left: 0.5vw;
+    height: 5vh;
+    width: 20vw;
+    border-radius: 0.25vw;
 }
 .editptext{
-    color:black;
+    color:white;
+    background-color: #94271ec4;
+    outline: none;
+    border: none;
+    margin-left: 2vw;
+    padding-bottom: 30vh;
+    padding-top: 1vh;
+    padding-left: 0.5vw;
+    border-radius: 0.25vw;
+}
+
+.editptext::placeholder, .editposttitle::placeholder{
+    color: white;
 }
 .button{
     position: absolute;
-    top:11vh;
-    left:63vw;
+    top:12vh;
+    left: 23.25vw;
+
 }
 .btn{
-    color:black;
+    color:white;
+    height: 4.8vh;
+    width: 6vw;
+    outline: none;
+    border: none;
+    background-color:  #94271ec4;
+    border-radius: 0.25vw;
+    transition: background-color, 0.4s;
+}
+.btn:hover{
+        background-color: rgb(202, 64, 52);
+        cursor: pointer;
 }
 .jsbutton{
     position: absolute;
@@ -289,12 +321,12 @@ input{
 .skapa{
     position: absolute;
     top: 40vh;
-    padding-right: 13.1vw;
+    padding-right: 15.4vw;
 }
 .logOut{
     position: absolute;
     top: 47.5vh;
-    padding-right: 17.5vw;
+    padding-right: 18.9vw;
 }
 .home{
     position: absolute;

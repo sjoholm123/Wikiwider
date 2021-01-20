@@ -14,7 +14,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){ //global use
     echo "<p class='user'>" . strtoupper($_SESSION['username'] . "</p>"); 
     $_SESSION['API'];
     $_SESSION['password'];
-        $pageID = $_GET['pageID'];
+    $pageID = $_GET['pageID'];
     $pageTitle = $_GET['pageTitle'];
     $username = $_SESSION['username'];
     $string = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "pageTitle="];
@@ -41,7 +41,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){ //global use
                     <img title="Add infobox" class="add_infobox" src="bilder/info-icon.svg">
             </div>
         </div>
-        <button class="cancel">Cancel</button>
+        <button class="cancel" onclick="location.href='loggedin.php'">Cancel</button>
     </nav>
 
     <div class="container">

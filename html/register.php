@@ -7,9 +7,14 @@
     $middleName = $_POST['middleName'];
     $lastName = $_POST['lastName'];
 
+    echo $user;
+    echo $firstName;
+    echo $middleName;
+    echo $lastName;
+    
     $data = array(
-        'user' => ''.$user,
-        'pass' => ''.$pass,
+        'username' => ''.$user,
+        'password' => ''.$pass,
         'firstName' => ''.$firstName,
         'middleName' => ''.$middleName,
         'lastName' => ''.$lastName

@@ -20,9 +20,9 @@
   <form class="form" action="search.php" method="get">
 <input class="search" id="holder" type="text" placeholder="Search for.." name="pageTitle">
 </form>
-<button class="text logOut"  onclick="location.href='logout.php'">Logga Ut</button>
-<button class="text skapa">Skapa Ny Artikel</button>
-<button class="text home"  onclick="location.href='loggedin.php'">Hem</button>
+<button class="text logOut"  onclick="location.href='logout.php'">Log Out</button>
+<button class="text skapa">Create Article</button>
+<button class="text home"  onclick="location.href='loggedin.php'">Home</button>
 </div>
 
 <i class="far fa-bars" id="bars"></i>
@@ -49,7 +49,7 @@
             <div class="fact"></div>
             <div class="editimage"></div>
             <!--<div class="facttext2">
-                <input type="text" name="pText" class="editptext" placeholder="Insert page title here" size="30">
+                <textarea type="text" name="pText" class="editptext" placeholder="Insert page title here" size="30">
                 <span class="help-block"></span>
             </div>-->
             <div class="button">
