@@ -13,6 +13,8 @@
 
 
     $postTitle = $_POST['postTitle'];
+
+    //echo $postTitle;
     $pText = $_POST['pText'];
     $username = $_POST['username'];
     $pageID = $_POST['pageID'];
