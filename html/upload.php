@@ -23,11 +23,14 @@
     $pText = $_POST['pText'];
     $username = $_POST['username'];
     $pageID = $_POST['pageID'];
+    $path = "bilder/" . basename($_FILES['imageURL']['name']);
 
+
+    print_r($imageURL);
 
     $data2 = array(
         "name" => $_FILES['imageURL']['name'],
-        "path" => $_FILES['imageURL']['tmp_name'],
+        "path" => $path,
         "type" => $_FILES['imageURL']['type'],
         "serviceID" => 7
     );
@@ -41,7 +44,8 @@
         'postTitle' => ''.$_POST['postTitle'][$i],
         'pText' => ''.$_POST['pText'][$i],
         'username' => ''.$username,
-        'pageID' => ''.$pageID
+        'pageID' => ''.$pageID,
+        'imageURL' => ''.$path
     );
     
     $payload = json_encode($data);
@@ -77,14 +81,14 @@ curl_multi_remove_handle($mh, $ch);
 curl_multi_remove_handle($mh, $ch2);
 curl_multi_close($mh);
 
-
-    /*if($status != CURLM_OK){
+/*
+    if($status != CURLM_OK){
         header('location: index.html');
     }
     else{
         //skicka till loggedin.php
         header('location: loggedin.php');
-    }*/
-    
+    }
+    */
     echo $status;        // echo $result för att kolla om executen funka
 ?>
