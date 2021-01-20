@@ -282,4 +282,12 @@ body{
   }
   .edit:hover{
     color: rgb(233,75,60);
-  }
+}
+
+.imageSRC{
+    position: absolute;
+    width: 10vw;
+    height: auto;
+    left: 75vw;
+    top: 30vh;
+}

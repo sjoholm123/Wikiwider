@@ -69,6 +69,10 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
   $json = json_decode($result, true);
 
   $pageTitle = $json['posts']['0']['pageTitle'];
+
+
+  
+  echo '<img class="imageSRC" src='.$json['posts']['0']['imageURL'].'>';
   
   echo '<div class="pageTitle">';
   echo $json['posts']['0']['pageTitle'];
@@ -91,10 +95,6 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
     echo '</div>';
   }
 
-  echo '<div class="imageURL">';
-  echo $json['posts']['0']['imageURL'];
-  echo '</div>';
-
   echo '<form class="create" action="newPost.php?pageID='.$pageID.'pageTitle='.$pageTitle.'" method="POST">
   
   <div class="create"><button class="bababoi type="submit">Create Post</button></div>
@@ -102,10 +102,6 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
 
   echo '</div>';
 
-
-  echo '<div class="imageURL">';
-  echo $json['posts']['0']['imageURL'];
-  echo '</div>';
 
  /* echo '<form class="create" action="edit_wiki.html?postID='.$postID.'pageTitle='.$pageTitle.'" method="POST">
   
