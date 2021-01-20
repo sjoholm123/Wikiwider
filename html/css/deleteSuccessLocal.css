@@ -3,304 +3,325 @@
     padding: 0;
 }
 body{
-    background-color: rgb(233,75,60);
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+    overflow-y: hidden;
+    background-color: black;
+
 }
-.user{
+.header{
     position: absolute;
-    left: 93.75vw;
-    top: 8.5vh;
-    font-family: 'Marvel';
-    font-weight: 900;
-    font-size: 1.5vw;
-    color: white;
-    letter-spacing: 0.25vw;
+    width: 100vw;
+    height: 10vh;
+    z-index: 1;
+    background-color: #e94b3c00;
+
 }
+
 .marvel{
     position: absolute;
-    width: 10%;
-    top: 3.5vh;
-    left: 2.25vw;
+    width: 10vw;
     filter: invert(1);
+    left: 1.5vw;
+    top: 2.5vh;
     -webkit-user-drag: none;
 }
-.search input[type=text]{
+.search{
     position: absolute;
     left: 12.5vw;
-    top: 3.35vh;
-    width: 45vw;
-    height: 5.25vh;
-    background-color: rgb(180, 51, 39);
+    top: 2.125vh;
+    width: 49vw;
+    height: 6vh;
+    background-color: #b43327c4;
     font-size: 1.5vw;
     padding-left: 1vw;
     border: none;
     outline: none;
     border-radius: 0.375vw;
+    z-index: 10;
+    font-family: 'Marvel';
+    font-weight: 900;
 }
 input{
     color: white;
 }
 ::placeholder{
     color: darkgray;
+    transition: 0.5s;
 }
-.fa-search{
+.search:hover::-webkit-input-placeholder, .search:focus::-webkit-input-placeholder {
+    padding-left: 39.5vw;
+    color: white;
+}
+#submit{
     position: absolute;
-    left: 56vw;
-    top: 4.5vh;
-    font-size: 1.4vw;
+    left: 60vw;
+    top: 3.6vh;
+    font-size: 1.5vw;
     background-color: rgba(0,0,0,0);
     border: none;
     outline: none;
-    color:  darkgray;
+    color: darkgrey;
     transition: color 0.4s;
+    z-index: 10;
 }
-.backgroundicon{
-    position: absolute;
-    width: 12.5vw;
-    height: 5vh;
-    top: 3vh;
-    left: 85vw;
-    background-color: rgb(255, 87, 72);
-    border-radius: 3vw;
+#submit:hover {
+    color: white;
 }
-.fa-sign-out{
+
+.user{
     position: absolute;
-    left: 10vw;
-    top: 0.75vh;
+    top: 2.5vh;
+    left: 90vw;
+    font-family: 'Marvel';
+    font-weight: 900;
+    font-size: 2vw;
+    color: white;
+    z-index: 20;
+    letter-spacing: 0.2vh;
+    visibility: hidden; 
+}
+.pageID{
+    position: absolute;
+    top: 55.25vh;
+    left: 94.5vw;
+    font-family: 'Marvel';
+    font-weight: 900;
+    font-size: 2vw;
+    color: white;
+    z-index: 20;
+    letter-spacing: 0.2vh;
+ /*   visibility: hidden; */ 
+}
+.menu-btn {
+    position:absolute;
+    left:96vw;
+    top:2.5vh;
+    width:  2.34vw;
+    height:  5.19vh;
+    background-color:#ff1f0bad;
+    border-radius:50%;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+    color: rgb(223, 223, 223);
+    transition: transform 0.3s;
+}
+#one{
+    z-index: 3;
+}
+#two{
+    font-size: 1.1vw;
+    z-index: 2;
+}
+#three{
+    font-size: 1.1vw;
+    z-index: 1;
+}
+.menu-btn:hover{
+    box-shadow: 0vw 0vh 1.5vw red;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.containS{
+    position: absolute;
+    width: 25vw;
+    display: inline-block; /* change the default display type to inline-block */
+    overflow: hidden; 
+}
+.containC{
+    position: absolute;
+    width: 25vw;
+    display: inline-block; /* change the default display type to inline-block */
+    overflow: hidden; 
+    left: 25vw;
+}
+.containH{
+    position: absolute;
+    width: 25vw;
+    display: inline-block; /* change the default display type to inline-block */
+    overflow: hidden; 
+    left: 50vw;
+}
+.containT{
+    position: absolute;
+    width: 25vw;
+    display: inline-block; /* change the default display type to inline-block */
+    overflow: hidden; 
+    left: 75vw;
+}
+.image{
+    width: 25vw;
+    transition: 0.5s;
+    filter: brightness(40%);
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+.image:hover{
+    transform: scale(1.1);
+    filter: brightness(120%);
+}
+.redBG{
+    position: absolute;
+    background-color: #e94b3c;
+    z-index: 10;
+    top: 99vh;
+    height: 10vh;
+    width: 25vw;
+    transition: 0.4s;
+    font-family: 'Marvel';
+    font-weight: 900;
+    font-size: 3vw;
+    text-align: center;
+    line-height: 10vh;
+    color: white;
+    cursor: pointer;
+}
+.redBG:hover{
+    transform: translateY(-9vh);
+}
+.image:hover ~ .redBG{
+    transform: translateY(-9vh);
+    
+}
+.table{
+    position: absolute;
+    background-color:#e94b3cc4;
     font-size: 1.75vw;
-    color: white;
-    transition: color 0.4s;
+    font-family: 'Marvel';
+    font-weight: 600;
+    color: black;
+    top: 20vh;
+    left: 2vw;
+    width: 58.7vw;
+    border-top-right-radius: 0.375vw;
+    border-bottom-right-radius: 0.375vw;
+    border: 0vw;
+    border-left-style: solid;
+    box-shadow: 1vw 2.5vh 1.75vw #8f281ec4;
+    overflow-y:scroll;
+    max-height:60vh;
+    display:block;
+    padding: 2vh;
+    line-height: 1.6;
+
+    
 }
-.fa-user{
-    position: absolute;
-    left: 7.25vw;
-    top: 1.1vh;
-    font-size: 1.4vw;
+.aText{
+    position: relative;
+    text-decoration: none;
     color: white;
-    transition: color 0.4s;
+    font-size: 1.75vw;
+    font-family: 'Marvel';
+    font-weight: 600;
+    margin-left: 0.75vw;
+    outline: none;
+    transition: color 0.3s;
 }
-.fa-file-plus{
-    position: absolute;
-    left: 4.5vw;
-    top: 1.1vh;
-    font-size: 1.4vw;
-    color: white;
-    transition: color 0.4s;
+.aText:hover{
+    color: black;
 }
 .fa-times{
-    color: rgb(255, 255, 255);
-    border:none;
-    background-color: rgba(0,0,0,0);
-    font-size:1.5vw;
-    position: relative;
-    left: 0vw;
-    top: 0.05vh;
-    outline: none;
+    color: white;
     text-decoration: none;
+    font-size: 1.5vw;
+    transition: color 0.3s;
 }
 .fa-times:hover{
     color: darkred;
 }
-.blackhover:hover{
-    color: rgb(230, 230, 230);
-}
-
-.login-form {
+::-webkit-scrollbar {
+    width: 10px;
+    border-top-right-radius: 0.375vw;
+    border-bottom-right-radius: 0.375vw;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #d34235c4;
+    border-top-right-radius: 0.375vw;
+    border-bottom-right-radius: 0.375vw;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #d34235c4;
+    border-top-right-radius: 0.375vw;
+    border-bottom-right-radius: 0.375vw;
+  }
+  .new-article {
     position: absolute;
-    width: 55vw;
-    height: 75vh;
-    top: 15vh;
-    background-color: #DC332E;
+    width: 40vw;
+    height: 25vh;
+    background-color: #b43327c4;
+    margin-top: 37.5vh;
+    margin-left: 30vw;
     display: flex;
+    justify-content: center;
     align-items: center;
-    box-shadow: -1vw 4vh 8vw rgb(102, 3, 3);
-    visibility: show;
-}
-
-.register-form{
-    position: absolute;
-    width: 55vw;
-    height: 75vh;
-    top: 15vh;
-    background-color: #DC332E;
-    display: flex;
-    align-items: center;
-    visibility: show;
-    box-shadow: -1vw 4vh 8vw rgb(102, 3, 3);
-
     visibility: hidden;
+    z-index: 2;
+    border-radius: 0.375vw;
 }
 
-.username {
-    width: 20vw;
-    height: 6vh;
-    outline: none;
-    margin-bottom: 2vh;
-    color: white;
-    border-bottom: 0.35vh solid darkgray;
-    background: transparent;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    transition: border-color 0.2s;
-}
-
-.username:focus ~ .username-label,
-username:not(:focus):valid ~ .username-label {
-    font-size: 1.05vw;
-    color: white;
-}
-
-.username-label {
+.h1 {
     position: absolute;
-    left: 27.25vw;
-    font-family: sans-serif;
-    font-size: 1.15vw;
-    top: 32.25vh;
-    pointer-events: none;
-    transition: 0.2s ease all;
-    color: darkgray;
-}
-
-.username-label-after {
-    font-size: 1.05vw;
-    color: white;
-    top: 28.3vh;
-    position: absolute;
-    left: 27.25vw;
-    font-family: sans-serif;
-    transition: 0.2s ease all;
-}
-
-.username:focus {
-    border-color: white;
-}
-
-.password:focus ~ .password-label,
-password:not(:focus):valid ~ .password-label {
-    font-size: 1.05vw;
+    top: 15%;
+    font-size: 3.5vh;
+    font-family: 'Marvel';
     color: white;
 }
 
-.password:focus {
-    border-color: white;
-}
-
-.password{
-    width: 20vw;
-    height: 6vh;
-    margin-left: 0vw;
-    outline: none;
-    color: white;
-    border-bottom: 0.35vh solid darkgray;
-    background: transparent;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    transition: border-color 0.2s;
-    
-}
-
-.password-label {
+.article-submit {
     position: absolute;
-    left: 27.25vw;
-    font-family: sans-serif;
-    font-size: 1.15vw;
-    top: 40.2vh;
-    pointer-events: none;
-    transition: 0.2s ease all;
-    color: darkgray;
-}
-
-.password-label-after {
-    position: absolute;
-    left: 27.25vw;
-    font-family: sans-serif;
-    pointer-events: none;
-    transition: 0.2s ease all;
-    font-size: 1.05vw;
-    color: white;
-    top: 37.25vh;
-
-}
-
-.login-btn {
-    position: absolute;
-    margin-top: 5vh;
-    margin-left: 5vw;
-    display: block;
-    width: 10vw;
-    height: 6vh;
+    margin-top: 18%;
+    margin-left: 50%;
+    width: 5vw;
+    height: 4.5vh;
     border-radius: 2vw;
-    color: darkgray;
-    outline: none;
-    border: 0.35vh solid darkgray;
+    border: 0.35vh solid white;
     background-color: transparent;
-    transition: 0.2s;
+    outline: none;
     cursor: pointer;
-    font-size: 1.1vw;
+    transition: 0.2s;
 }
 
-.login-btn:hover {
+.cancel {
+    position: absolute;
+    color: white;
+    margin-top: 18%;
+    margin-left: 80%;
+    width: 5vw;
+    height: 4.5vh;
+    border-radius: 2vw;
+    border: 0.35vh solid white;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+}
+
+.article-submit:hover {
     background-color: white;
     color: black;
     border: 0.35vh solid white;
 }
 
-.register-link {
+.cancel:hover {
+    background-color: white;
+    color: black;
+    border: 0.35vh solid white;
+}
+
+.Title {
     position: relative;
-}
-
-.pos {
-    position: absolute;
-    width: 35.75vw;
-    height: 6vh;
-    bottom: 0;
-    margin-left: 19.25vw;
-    text-align: center;
-    color: white;
-    font-size: 1.05vw;
-}
-
-.link {
-    text-decoration: underline;
-    color: white;
-}
-
-.logo {
-    position: absolute;
-    width: 20vw;
-    height: 15vh;
-    top: 5.75vh;
-    background-color: inherit;
-    left: 32.5vw;
-}
-
-.marvel-logo {
-    width: 10vw;
-    image-rendering: optimizeQuality;
-}
-
-.banner {
-    position: relative;
-    width: 35%;
-    height: 100%;
-    background-color: aliceblue;
-    left: 0;
-    margin-right: 8vw;
-    background: url("login-banner.png");
-    background-size: 100% auto;
-}
-.regi-banner {
-    position: relative;
-    width: 35%;
-    height: 100%;
-    left: 0;
-    margin-right: 8vw;
-    background-image: url("regi-banner.png");
-    background-size: 100%;
+    width: 80%;
+    height: 20%;
+    box-sizing: border-box;
+    color: black;
+    padding-left: 0.5vw;
+    outline: none;
 }
 .deleteText{
     position: absolute;
@@ -311,54 +332,3 @@ password:not(:focus):valid ~ .password-label {
     left: 2.5vw;
     color: rgb(240, 240, 240);
 }
-.table{
-    position: absolute;
-    background-color:rgb(211, 66, 53);
-    font-size: 1.75vw;
-    font-family: 'Marvel';
-    font-weight: 600;
-    color: black;
-    top: 20vh;
-    left: 2.5vw;
-    width: 56vw;
-    border-top-right-radius: 0.375vw;
-    border-bottom-right-radius: 0.375vw;
-    border: 1vw rgb(255, 91, 76);
-    border-left-style: solid;
-    box-shadow: 1vw 2.5vh 1.75vw rgb(143, 40, 30);
-    overflow-y:scroll;
-    max-height:80vh;
-    display:block;
-}
-.aText{
-    text-decoration: none;
-    color: white;
-    font-size: 1.75vw;
-    font-family: 'Marvel';
-    font-weight: 600;
-    margin-left: 0.75vw;
-
-}
-.aText:hover{
-    color: black;
-}
-::-webkit-scrollbar {
-    width: 10px;
-    border-top-right-radius: 0.375vw;
-    border-bottom-right-radius: 0.375vw;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: rgb(211, 66, 53);
-    border-top-right-radius: 0.375vw;
-    border-bottom-right-radius: 0.375vw;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(211, 66, 53);
-    border-top-right-radius: 0.375vw;
-    border-bottom-right-radius: 0.375vw;
-  }
-  

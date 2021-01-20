@@ -1,6 +1,6 @@
- $('.fa-times').on('click', function() {
+$('.delete').on('click', function() {
     
-    var result = confirm("Vill du ta bort denna artikeln?");
+    var result = confirm("Vill du ta bort denna posten?");
 
     if (result == true) {
         //Logic to delete the item

@@ -17,10 +17,10 @@
     <div class="menu-btn" id="one">
         <i class="fas fa-user"></i>
         </div>
-        <div class="menu-btn" id="two" onclick="location.href='createWikiLocal.html'">
+        <div class="menu-btn" id="two">
             <i class="fas fa-plus"></i>
         </div>  
-        <div class="menu-btn signOut" id="three" onclick="location.href='index.html'">
+        <div class="menu-btn signOut" id="three" onclick="location.href='logout.php'">
             <i class="fas fa-sign-out-alt"></i>
         </div>  
     <div class="containS">
@@ -39,10 +39,16 @@
     <img onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" class="image" id="thor" src="bilder/thor.png">
     <div class="redBG" id="logout" onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" onclick="location.href='index.html';">THOR</div>
 </div>
-<form action="search.php" method="get">
-    <div class="search"><input type="text" placeholder="Search for.." name="pageTitle"></div>
- <button type="submit" class="far fa-search blackhover">
+<form class="form" action="search.php" method="get">
+<input class="search" id="holder" type="text" placeholder="Search for.." name="pageTitle">
+ <button type="submit"><i id="submit" class="far fa-search blackhover"></i>
      </button>
+    </form>
+    <form class="new-article" action="newPage.php" method="POST">
+        <h1 class="h1">New Article</h1>
+        <input class="Title" type="text" placeholder="Article Title" name="pageTitle">
+        <input class="article-submit" value="Create" type="submit">
+        <button type="button" class="cancel">Cancel</button>
     </form>
 <?php
 
@@ -73,9 +79,9 @@ if(!isset($_SERVER['HTTP_REFERER'])){
     curl_close($ch);
 
     $bos = json_decode($result);
-    
     echo "<div class='table' id='table'>";
 
+   
     foreach ($bos as $row){
                echo nl2br ("<a href='delete.php?pageID=$row->pageID' class='far fa-times'></a><a href='read.php?pageID=$row->pageID' class='aText' id='$row->pageID' name='pageID'>$row->pageTitle</a>");   
                echo "<br>";
@@ -87,11 +93,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
     ?>
 
 </body>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="js/highlight.js"></script>
-<script src="js/popUpLocal.js"></script>
-<script src="js/alert.js"></script>
-<script type="text/javascript" src="js/marvel.js"></script>
 <script src="js/menu.js"></script>
+<script src="js/highlight.js"></script>
+<script src="js/alert.js"></script>
 </html>

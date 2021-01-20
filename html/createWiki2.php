@@ -33,18 +33,23 @@
         'pageID' => ''.$pageID
     );
 
+
     $payload = json_encode($data);      //konverterar in till Json
+
     $ch = curl_init("https://wider.ntigskovde.se/api/pages/create_post.php?API=$API");  //kolla så att filsökvägen är rätt /api/*/*.php?API=$API
+    
     curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+    
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+    
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $result = curl_exec($ch);
+    
     curl_close($ch);
 
     }
-
-    /*
+    
     if($result == 'nono'){
         header('location: index.html');
     }
@@ -52,6 +57,8 @@
         //skicka till loggedin.php
         header('location: loggedin.php');
     }
-*/
-    echo $result;   // echo $result för att kolla om executen funka
+
+    print_r($imageURL);
+    echo $result;
+    echo $result2;   // echo $result för att kolla om executen funka
 ?>

@@ -24,7 +24,7 @@ body{
     top: 2.5vh;
     -webkit-user-drag: none;
 }
-.search input[type=text]{
+.search{
     position: absolute;
     left: 12.5vw;
     top: 2.125vh;
@@ -45,18 +45,26 @@ input{
 }
 ::placeholder{
     color: darkgray;
+    transition: 0.5s;
 }
-.fa-search{
+.search:hover::-webkit-input-placeholder, .search:focus::-webkit-input-placeholder {
+    padding-left: 39.5vw;
+    color: white;
+}
+#submit{
     position: absolute;
     left: 60vw;
-    top: 3.7vh;
+    top: 3.6vh;
     font-size: 1.5vw;
     background-color: rgba(0,0,0,0);
     border: none;
     outline: none;
-    color:  darkgray;
+    color: darkgrey;
     transition: color 0.4s;
     z-index: 10;
+}
+#submit:hover {
+    color: white;
 }
 
 .user{
@@ -242,5 +250,85 @@ input{
     border-top-right-radius: 0.375vw;
     border-bottom-right-radius: 0.375vw;
   }
-  
+  .new-article {
+    position: absolute;
+    width: 40vw;
+    height: 25vh;
+    background-color: #b43327c4;
+    margin-top: 37.5vh;
+    margin-left: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 2;
+    border-radius: 0.375vw;
+}
 
+.h1 {
+    position: absolute;
+    top: 15%;
+    font-size: 3.5vh;
+    font-family: 'Marvel';
+    color: white;
+}
+
+.article-submit {
+    position: absolute;
+    margin-top: 18%;
+    margin-left: 50%;
+    width: 5vw;
+    height: 4.5vh;
+    border-radius: 2vw;
+    border: 0.35vh solid white;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cancel {
+    position: absolute;
+    color: white;
+    margin-top: 18%;
+    margin-left: 80%;
+    width: 5vw;
+    height: 4.5vh;
+    border-radius: 2vw;
+    border: 0.35vh solid white;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+}
+
+.article-submit:hover {
+    background-color: white;
+    color: black;
+    border: 0.35vh solid white;
+}
+
+.cancel:hover {
+    background-color: white;
+    color: black;
+    border: 0.35vh solid white;
+}
+
+.Title {
+    position: relative;
+    width: 80%;
+    height: 20%;
+    box-sizing: border-box;
+    color: black;
+    padding-left: 0.5vw;
+    outline: none;
+}
+.deleteText{
+    position: absolute;
+    font-size: 2.5vw;
+    font-family: 'Marvel';
+    font-weight: 600;
+    top: 12.5vh;
+    left: 2.5vw;
+    color: rgb(240, 240, 240);
+}

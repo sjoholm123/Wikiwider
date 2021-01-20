@@ -11,6 +11,46 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="header">
+            <img class="marvel" src="bilder/marvelwiki.png">
+    </div>
+    <div class="menu-btn" id="one">
+        <i class="fas fa-user"></i>
+        </div>
+        <div class="menu-btn" id="two">
+            <i class="fas fa-plus"></i>
+        </div>  
+        <div class="menu-btn signOut" id="three" onclick="location.href='logout.php'">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>  
+    <div class="containS">
+    <img onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()" class="image" id="spider" src="bilder/spiderman.png">
+    <div class="redBG" id="edit" onmouseover="mouseoverBox1()" onmouseout="onmouseoutBox1()">SPIDER-MAN</div>
+</div>
+<div class="containC">
+    <img onmouseover="mouseoverBox2()" onmouseout="onmouseoutBox2()" class="image" id="captain" src="bilder/captain.png">
+    <div class="redBG" id="create" onmouseover="mouseoverBox2()" onmouseout="onmouseoutBox2()">CAPTAIN AMERICA</div>
+</div>
+<div class="containH">
+    <img onmouseover="mouseoverBox3()" onmouseout="onmouseoutBox3()" class="image" id="hulk" src="bilder/hulk.png">
+    <div class="redBG" id="delete" onmouseover="mouseoverBox3()" onmouseout="onmouseoutBox3()">THE HULK</div>
+</div>
+<div class="containT">
+    <img onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" class="image" id="thor" src="bilder/thor.png">
+    <div class="redBG" id="logout" onmouseover="mouseoverBox4()" onmouseout="onmouseoutBox4()" onclick="location.href='index.html';">THOR</div>
+</div>
+<form class="form" action="search.php" method="get">
+<input class="search" id="holder" type="text" placeholder="Search for.." name="pageTitle">
+ <button type="submit"><i id="submit" class="far fa-search blackhover"></i>
+     </button>
+    </form>
+    <form class="new-article" action="newPage.php" method="POST">
+        <h1 class="h1">New Article</h1>
+        <input class="Title" type="text" placeholder="Article Title" name="pageTitle">
+        <input class="article-submit" value="Create" type="submit">
+        <button type="button" class="cancel">Cancel</button>
+    </form>
+    <a class="deleteText">DIN ARTIKEL ÄR NU BORTTAGEN</a>
 <?php
 
 if(!isset($_SERVER['HTTP_REFERER'])){
@@ -33,42 +73,28 @@ if(!isset($_SERVER['HTTP_REFERER'])){
     );
 
     $payload = json_encode($data);
-    $ch = curl_init("https://wider.ntigskovde.se/api/pages/search_page.php?API=$API&search=$pageTitle&serviceID=0");
+    $ch = curl_init("https://wider.ntigskovde.se/api/pages/search_page.php?API=$API&search=$pageTitle&serviceID=7");
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($ch);
     curl_close($ch);
 
     $bos = json_decode($result);
-    echo "<table class='table' id='table' cellpadding='15' cellspacing='15'>";
-    echo "<tr>";
-    echo "<td>";
+    echo "<div class='table' id='table'>";
 
+   
     foreach ($bos as $row){
                echo nl2br ("<a href='delete.php?pageID=$row->pageID' class='far fa-times'></a><a href='read.php?pageID=$row->pageID' class='aText' id='$row->pageID' name='pageID'>$row->pageTitle</a>");   
                echo "<br>";
     }
-    echo '</tr>';
-    echo '</td>';
-    echo '</table>';
+    echo '</div>';
 } else {
     header('Location: index.html');
 }
     ?>
-        <a class="deleteText">DIN ARTIKEL ÄR NU BORTTAGEN</a>
-        <img class="marvel" src="bilder/marvelwiki.png">
-        <form action="search.php" method="get">
-        <div class="search"><input type="text" placeholder="Search for.." name="pageTitle"></div>
-     <button type="submit" class="far fa-search blackhover">
-</button>
-    </form>
-        <div class="backgroundicon">
-        <i class="far fa-sign-out blackhover" id="sign-out" onclick="location.href='index.html';"></i>
-        <i class="fas fa-user blackhover" id="register"></i>
-        <i class="fas fa-file-plus blackhover" id="file" onclick="location.href='createWikiLocal.html';"></i>
-        </div>  
+
 </body>
-<script src="js/popUpLocal.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/highlight.js"></script>
 <script src="js/alert.js"></script>
-<script type="text/javascript" src="js/marvel.js"></script>
 </html>

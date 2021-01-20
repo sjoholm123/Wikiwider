@@ -68,7 +68,7 @@ $(document).ready(function() {
         if (x < max_fields) {
             x++;
             //add input box
-            $(wrapper).append("<div><input class='image' type='file' accept=' image/png, image/jpeg'/><a href='#' class='deleteImg'><img class='deleteIcon' src='bilder/delete.svg'></a></div>"); 
+            $(wrapper).append("<div><input class='image' name='imageURL' type='file' accept=' image/png, image/jpeg'/><a href='#' class='deleteImg'><img class='deleteIcon' src='bilder/delete.svg'></a></div>"); 
             //Pcount++;
         } else {
             alert('You Reached the limits')
