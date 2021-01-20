@@ -26,7 +26,14 @@
 <button class="text skapa">Skapa Ny Artikel</button>
 <button class="text home"  onclick="location.href='loggedin.php'">Hem</button>
 </div>
+
 <i class="far fa-bars" id="bars"></i>
+<form class="new-article" action="newPage.php" method="POST">
+    <h1 class="h1">New Article</h1>
+        <input class="Title" type="text" placeholder="Article Title" name="pageTitle">
+        <input class="article-submit" value="Create" type="submit">
+        <button type="button" class="cancel">Cancel</button>
+    </form>
 <?php
 
 if(!isset($_SERVER['HTTP_REFERER'])){
@@ -103,6 +110,7 @@ $pageID = $_GET['pageID'];   // GET genom form eller href
 ?>
   
 </body>
+<script src="js/newArticle.js"></script>
 <script src="js/hamburgerMenu.js"></script>
 <script src="js/alertPost.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

@@ -19,6 +19,9 @@ body{
     font-size: 2vw;
     color: white;
 }
+.fa-bars:hover{
+    cursor: pointer
+}
 .menu{
     position: absolute;
     width: 30vw;
@@ -45,6 +48,9 @@ body{
     left: 27vw;
     top: 4.5vh;
     font-size: 2vw;
+}
+#menuCross:hover{
+    cursor: pointer;
 }
 .form input[type=text]{
     color: white;
@@ -76,6 +82,7 @@ body{
     left: 0;
     height: 7.5vh;
     background-color: rgba(0,0,0,0);
+    cursor: pointer;
 }
 .skapa{
     position: absolute;
@@ -184,4 +191,79 @@ body{
 }
 .bababoi:hover{
     background-color: rgb(233,75,60);
+    cursor: pointer;
+}
+.new-article {
+    position: absolute;
+    width: 40vw;
+    height: 25vh;
+    background-color: #94271ec4;
+    margin-top: 37.5vh;
+    margin-left: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 2;
+    border-radius: 0.375vw;
+}
+
+.h1 {
+    position: absolute;
+    top: 15%;
+    font-size: 3.5vh;
+    font-family: 'Marvel';
+    color: white;
+}
+
+.article-submit {
+    position: absolute;
+    margin-top: 18%;
+    margin-left: 50%;
+    width: 5vw;
+    height: 4.5vh;
+    border-radius: 2vw;
+    border: 0.35vh solid white;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+}
+
+.cancel {
+    position: absolute;
+    color: white;
+    margin-top: 18%;
+    margin-left: 80%;
+    width: 5vw;
+    height: 4.5vh;
+    border-radius: 2vw;
+    border: 0.35vh solid white;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+}
+
+.article-submit:hover {
+    background-color: white;
+    color: black;
+    border: 0.35vh solid white;
+}
+
+.cancel:hover {
+    background-color: white;
+    color: black;
+    border: 0.35vh solid white;
+}
+
+.Title {
+    position: relative;
+    width: 80%;
+    height: 20%;
+    box-sizing: border-box;
+    color: black;
+    padding-left: 0.5vw;
+    outline: none;
 }
