@@ -41,6 +41,7 @@ body{
     top: 3.5vh;
     width: 12.5vw;
     filter: invert(1);
+    -webkit-user-drag: none;
 }
 #menuCross{
     color: white;
@@ -272,7 +273,7 @@ body{
     top:0vh;
     text-decoration: none;
     color: white;
-    font-size: 1.1vw;
+    font-size: 1vw;
     margin-left: 1vw;
     top: -0.3vh;
     transition: 0.2s;

@@ -242,6 +242,7 @@ input{
     top: 3.5vh;
     width: 12.5vw;
     filter: invert(1);
+    -webkit-user-drag: none;
 }
 #menuCross{
     color: white;
